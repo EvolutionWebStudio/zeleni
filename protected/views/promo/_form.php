@@ -1,13 +1,13 @@
 <?php
-/* @var $this CategoryController */
-/* @var $model Category */
+/* @var $this PromoController */
+/* @var $model Promo */
 /* @var $form CActiveForm */
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'category-form',
+	'id'=>'promo-form',
 	// Please note: When you enable ajax validation, make sure the corresponding
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
@@ -26,33 +26,33 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'alias'); ?>
-		<?php echo $form->textField($model,'alias',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'alias'); ?>
+		<?php echo $form->labelEx($model,'content'); ?>
+		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'content'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'order'); ?>
-		<?php echo $form->textField($model,'order'); ?>
-		<?php echo $form->error($model,'order'); ?>
+		<?php echo $form->labelEx($model,'link'); ?>
+		<?php echo $form->textField($model,'link',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'link'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'image1'); ?>
+		<?php echo $form->textField($model,'image1',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'image1'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'image2'); ?>
+		<?php echo $form->textField($model,'image2',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'image2'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'lang'); ?>
 		<?php echo $form->textField($model,'lang',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'lang'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'parent_id'); ?>
-		<?php echo $form->textField($model,'parent_id'); ?>
-		<?php echo $form->error($model,'parent_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>10,'maxlength'=>10)); ?>
-		<?php echo $form->error($model,'type'); ?>
 	</div>
 
 	<div class="row buttons">

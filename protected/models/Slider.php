@@ -5,12 +5,13 @@
  *
  * The followings are the available columns in table 'slider':
  * @property integer $id
- * @property string $type
- * @property string $titleBig
+ * @property integer $number
+ * @property string $link
  * @property string $title
  * @property string $content
- * @property string $img
+ * @property string $image
  * @property string $lang
+ * @property string $color
  */
 class Slider extends CActiveRecord
 {
@@ -30,11 +31,14 @@ class Slider extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('type, titleBig, title, img, lang', 'length', 'max'=>45),
+			array('number', 'numerical', 'integerOnly'=>true),
+			array('link, title', 'length', 'max'=>45),
+			array('image', 'length', 'max'=>255),
+			array('lang, color', 'length', 'max'=>10),
 			array('content', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, type, titleBig, title, content, img, lang', 'safe', 'on'=>'search'),
+			array('id, number, link, title, content, image, lang, color', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,12 +60,13 @@ class Slider extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'type' => 'Type',
-			'titleBig' => 'Title Big',
+			'number' => 'Number',
+			'link' => 'Link',
 			'title' => 'Title',
 			'content' => 'Content',
-			'img' => 'Img',
+			'image' => 'Image',
 			'lang' => 'Lang',
+			'color' => 'Color',
 		);
 	}
 
@@ -84,12 +89,13 @@ class Slider extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('type',$this->type,true);
-		$criteria->compare('titleBig',$this->titleBig,true);
+		$criteria->compare('number',$this->number);
+		$criteria->compare('link',$this->link,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('content',$this->content,true);
-		$criteria->compare('img',$this->img,true);
+		$criteria->compare('image',$this->image,true);
 		$criteria->compare('lang',$this->lang,true);
+		$criteria->compare('color',$this->color,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

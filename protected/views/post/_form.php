@@ -44,15 +44,21 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'linkText'); ?>
-		<?php echo $form->textField($model,'linkText',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'linkText'); ?>
+		<?php echo $form->labelEx($model,'link_text'); ?>
+		<?php echo $form->textField($model,'link_text',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'link_text'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'category_id'); ?>
 		<?php echo $form->textField($model,'category_id'); ?>
 		<?php echo $form->error($model,'category_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'number'); ?>
+		<?php echo $form->textField($model,'number'); ?>
+		<?php echo $form->error($model,'number'); ?>
 	</div>
 
 	<div class="row buttons">

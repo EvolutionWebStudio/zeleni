@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Categories'=>array('index'),
-	$model->name,
+	$model->title,
 );
 
 $this->menu=array(
@@ -22,11 +22,11 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'name',
+		'title',
 		'alias',
-		'link',
-		'parentCategory',
 		'order',
 		'lang',
+		'parent_id',
+		'type',
 	),
 )); ?>

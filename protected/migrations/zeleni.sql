@@ -10,13 +10,19 @@ USE `zeleni` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `zeleni`.`category` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
+  `title` VARCHAR(45) NULL,
   `alias` VARCHAR(45) NULL,
-  `link` VARCHAR(45) NULL,
-  `parentCategory` VARCHAR(45) NULL,
   `order` INT NULL,
-  `lang` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
+  `lang` VARCHAR(10) NULL,
+  `parent_id` INT NULL,
+  `type` VARCHAR(10) NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_category_category1_idx` (`parent_id` ASC),
+  CONSTRAINT `fk_category_category1`
+    FOREIGN KEY (`parent_id`)
+    REFERENCES `zeleni`.`category` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -29,8 +35,9 @@ CREATE TABLE IF NOT EXISTS `zeleni`.`post` (
   `content` TEXT NULL,
   `lang` VARCHAR(45) NULL,
   `link` VARCHAR(45) NULL,
-  `linkText` VARCHAR(45) NULL,
-  `category_id` INT NOT NULL,
+  `link_text` VARCHAR(45) NULL,
+  `category_id` INT NULL,
+  `number` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_post_category1_idx` (`category_id` ASC),
   CONSTRAINT `fk_post_category1`
@@ -46,12 +53,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `zeleni`.`slider` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `type` VARCHAR(45) NULL,
-  `titleBig` VARCHAR(45) NULL,
+  `number` INT NULL,
+  `link` VARCHAR(45) NULL,
   `title` VARCHAR(45) NULL,
   `content` TEXT NULL,
-  `img` VARCHAR(45) NULL,
-  `lang` VARCHAR(45) NULL,
+  `image` VARCHAR(255) NULL,
+  `lang` VARCHAR(10) NULL,
+  `color` VARCHAR(10) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -60,26 +68,40 @@ ENGINE = InnoDB;
 -- Table `zeleni`.`banner`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `zeleni`.`banner` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `type` VARCHAR(45) NULL,
-  `title` VARCHAR(45) NULL,
+  `id` INT NOT NULL,
+  `number` INT NULL,
   `content` TEXT NULL,
-  `img` VARCHAR(45) NULL,
-  `lang` VARCHAR(45) NULL,
-  `link` VARCHAR(45) NULL,
-  `color` VARCHAR(45) NULL,
+  `image` VARCHAR(255) NULL,
+  `lang` VARCHAR(10) NULL,
+  `link` VARCHAR(255) NULL,
+  `color` VARCHAR(10) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `zeleni`.`table1`
+-- Table `zeleni`.`promo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `zeleni`.`promo` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NULL,
+  `content` TEXT NULL,
+  `link` VARCHAR(255) NULL,
+  `image1` VARCHAR(255) NULL,
+  `image2` VARCHAR(255) NULL,
+  `lang` VARCHAR(10) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `zeleni`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `zeleni`.`user` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `iduser` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NULL,
-  `password` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
+  `password` VARCHAR(255) NULL,
+  PRIMARY KEY (`iduser`))
 ENGINE = InnoDB;
 
 

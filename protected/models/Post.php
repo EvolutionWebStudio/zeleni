@@ -9,8 +9,9 @@
  * @property string $content
  * @property string $lang
  * @property string $link
- * @property string $linkText
+ * @property string $link_text
  * @property integer $category_id
+ * @property integer $number
  *
  * The followings are the available model relations:
  * @property Category $category
@@ -33,14 +34,13 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('category_id', 'required'),
-			array('category_id', 'numerical', 'integerOnly'=>true),
+			array('category_id, number', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>255),
-			array('lang, link, linkText', 'length', 'max'=>45),
+			array('lang, link, link_text', 'length', 'max'=>45),
 			array('content', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, content, lang, link, linkText, category_id', 'safe', 'on'=>'search'),
+			array('id, title, content, lang, link, link_text, category_id, number', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,8 +67,9 @@ class Post extends CActiveRecord
 			'content' => 'Content',
 			'lang' => 'Lang',
 			'link' => 'Link',
-			'linkText' => 'Link Text',
+			'link_text' => 'Link Text',
 			'category_id' => 'Category',
+			'number' => 'Number',
 		);
 	}
 
@@ -95,8 +96,9 @@ class Post extends CActiveRecord
 		$criteria->compare('content',$this->content,true);
 		$criteria->compare('lang',$this->lang,true);
 		$criteria->compare('link',$this->link,true);
-		$criteria->compare('linkText',$this->linkText,true);
+		$criteria->compare('link_text',$this->link_text,true);
 		$criteria->compare('category_id',$this->category_id);
+		$criteria->compare('number',$this->number);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

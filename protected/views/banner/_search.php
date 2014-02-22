@@ -17,13 +17,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->label($model,'number'); ?>
+		<?php echo $form->textField($model,'number'); ?>
 	</div>
 
 	<div class="row">
@@ -32,23 +27,23 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'img'); ?>
-		<?php echo $form->textField($model,'img',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->label($model,'image'); ?>
+		<?php echo $form->textField($model,'image',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'lang'); ?>
-		<?php echo $form->textField($model,'lang',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'lang',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'link'); ?>
-		<?php echo $form->textField($model,'link',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'link',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'color'); ?>
-		<?php echo $form->textField($model,'color',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'color',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
 
 	<div class="row buttons">

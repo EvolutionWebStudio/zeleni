@@ -1,6 +1,6 @@
 <?php
-/* @var $this PostController */
-/* @var $model Post */
+/* @var $this PromoController */
+/* @var $model Promo */
 /* @var $form CActiveForm */
 ?>
 
@@ -18,7 +18,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">
@@ -27,28 +27,23 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'lang'); ?>
-		<?php echo $form->textField($model,'lang',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'link'); ?>
-		<?php echo $form->textField($model,'link',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'link',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'link_text'); ?>
-		<?php echo $form->textField($model,'link_text',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->label($model,'image1'); ?>
+		<?php echo $form->textField($model,'image1',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'category_id'); ?>
-		<?php echo $form->textField($model,'category_id'); ?>
+		<?php echo $form->label($model,'image2'); ?>
+		<?php echo $form->textField($model,'image2',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'number'); ?>
-		<?php echo $form->textField($model,'number'); ?>
+		<?php echo $form->label($model,'lang'); ?>
+		<?php echo $form->textField($model,'lang',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
 
 	<div class="row buttons">

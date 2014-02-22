@@ -17,23 +17,13 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->label($model,'title'); ?>
+		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'alias'); ?>
 		<?php echo $form->textField($model,'alias',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'link'); ?>
-		<?php echo $form->textField($model,'link',array('size'=>45,'maxlength'=>45)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'parentCategory'); ?>
-		<?php echo $form->textField($model,'parentCategory',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">
@@ -43,7 +33,17 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'lang'); ?>
-		<?php echo $form->textField($model,'lang',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'lang',array('size'=>10,'maxlength'=>10)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'parent_id'); ?>
+		<?php echo $form->textField($model,'parent_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'type'); ?>
+		<?php echo $form->textField($model,'type',array('size'=>10,'maxlength'=>10)); ?>
 	</div>
 
 	<div class="row buttons">

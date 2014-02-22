@@ -26,7 +26,8 @@ $this->menu=array(
 		'content',
 		'lang',
 		'link',
-		'linkText',
+		'link_text',
 		'category_id',
+		'number',
 	),
 )); ?>

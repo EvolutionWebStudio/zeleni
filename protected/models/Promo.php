@@ -1,25 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "banner".
+ * This is the model class for table "promo".
  *
- * The followings are the available columns in table 'banner':
+ * The followings are the available columns in table 'promo':
  * @property integer $id
- * @property integer $number
+ * @property string $title
  * @property string $content
- * @property string $image
- * @property string $lang
  * @property string $link
- * @property string $color
+ * @property string $image1
+ * @property string $image2
+ * @property string $lang
  */
-class Banner extends CActiveRecord
+class Promo extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'banner';
+		return 'promo';
 	}
 
 	/**
@@ -30,14 +30,13 @@ class Banner extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id', 'required'),
-			array('id, number', 'numerical', 'integerOnly'=>true),
-			array('image, link', 'length', 'max'=>255),
-			array('lang, color', 'length', 'max'=>10),
+			array('title', 'length', 'max'=>45),
+			array('link, image1, image2', 'length', 'max'=>255),
+			array('lang', 'length', 'max'=>10),
 			array('content', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, number, content, image, lang, link, color', 'safe', 'on'=>'search'),
+			array('id, title, content, link, image1, image2, lang', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,12 +58,12 @@ class Banner extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'number' => 'Number',
+			'title' => 'Title',
 			'content' => 'Content',
-			'image' => 'Image',
-			'lang' => 'Lang',
 			'link' => 'Link',
-			'color' => 'Color',
+			'image1' => 'Image1',
+			'image2' => 'Image2',
+			'lang' => 'Lang',
 		);
 	}
 
@@ -87,12 +86,12 @@ class Banner extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('number',$this->number);
+		$criteria->compare('title',$this->title,true);
 		$criteria->compare('content',$this->content,true);
-		$criteria->compare('image',$this->image,true);
-		$criteria->compare('lang',$this->lang,true);
 		$criteria->compare('link',$this->link,true);
-		$criteria->compare('color',$this->color,true);
+		$criteria->compare('image1',$this->image1,true);
+		$criteria->compare('image2',$this->image2,true);
+		$criteria->compare('lang',$this->lang,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -103,7 +102,7 @@ class Banner extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Banner the static model class
+	 * @return Promo the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

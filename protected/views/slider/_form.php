@@ -20,15 +20,15 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'type'); ?>
+		<?php echo $form->labelEx($model,'number'); ?>
+		<?php echo $form->textField($model,'number'); ?>
+		<?php echo $form->error($model,'number'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'titleBig'); ?>
-		<?php echo $form->textField($model,'titleBig',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'titleBig'); ?>
+		<?php echo $form->labelEx($model,'link'); ?>
+		<?php echo $form->textField($model,'link',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'link'); ?>
 	</div>
 
 	<div class="row">
@@ -44,15 +44,21 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'img'); ?>
-		<?php echo $form->textField($model,'img',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'img'); ?>
+		<?php echo $form->labelEx($model,'image'); ?>
+		<?php echo $form->textField($model,'image',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'image'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'lang'); ?>
-		<?php echo $form->textField($model,'lang',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'lang',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'lang'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'color'); ?>
+		<?php echo $form->textField($model,'color',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->error($model,'color'); ?>
 	</div>
 
 	<div class="row buttons">

@@ -22,11 +22,12 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'type',
-		'titleBig',
+		'number',
+		'link',
 		'title',
 		'content',
-		'img',
+		'image',
 		'lang',
+		'color',
 	),
 )); ?>

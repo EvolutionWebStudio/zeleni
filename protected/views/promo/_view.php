@@ -1,6 +1,6 @@
 <?php
-/* @var $this PostController */
-/* @var $data Post */
+/* @var $this PromoController */
+/* @var $data Promo */
 ?>
 
 <div class="view">
@@ -17,27 +17,21 @@
 	<?php echo CHtml::encode($data->content); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('lang')); ?>:</b>
-	<?php echo CHtml::encode($data->lang); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('link')); ?>:</b>
 	<?php echo CHtml::encode($data->link); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('link_text')); ?>:</b>
-	<?php echo CHtml::encode($data->link_text); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('image1')); ?>:</b>
+	<?php echo CHtml::encode($data->image1); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('category_id')); ?>:</b>
-	<?php echo CHtml::encode($data->category_id); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('image2')); ?>:</b>
+	<?php echo CHtml::encode($data->image2); ?>
 	<br />
 
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('number')); ?>:</b>
-	<?php echo CHtml::encode($data->number); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('lang')); ?>:</b>
+	<?php echo CHtml::encode($data->lang); ?>
 	<br />
 
-	*/ ?>
 
 </div>
