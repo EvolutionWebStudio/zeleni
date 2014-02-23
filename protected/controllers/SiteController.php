@@ -27,10 +27,47 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+        $slides = Slider::model()->findAll();
+
+        $this->render('index',array(
+            'slides'=>$slides,
+        ));
 	}
+
+    /**
+     * This is the default 'index' action that is invoked
+     * when an action is not explicitly requested by users.
+     */
+    public function actionView()
+    {
+        $category = $_GET['category'];
+
+        $category = Category::model()->findByAttributes(array(
+            'alias' => $category,
+            'parent_id' => null,
+        ));
+
+        if($category){
+            $post = Post::model()->findByAttributes(array(
+                'category_id' => $category->id,
+            ));
+            $subCategories = Category::model()->findAllByAttributes(array(
+                'parent_id' => $category->id,
+            ));
+                $this->render('view',array(
+                    'category'=>$category,
+                    'post'=>$post,
+                    'subCategories'=>$subCategories,
+                ));
+
+//            $_GET['subcategory'];
+        }
+        else{
+            $this->redirect(array('/'));
+        }
+
+
+    }
 
 	/**
 	 * This is the action to handle external exceptions.
@@ -49,7 +86,7 @@ class SiteController extends Controller
 	/**
 	 * Displays the contact page
 	 */
-	public function actionContact()
+	public function actionContactt()
 	{
 		$model=new ContactForm;
 		if(isset($_POST['ContactForm']))

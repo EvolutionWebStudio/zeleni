@@ -45,13 +45,24 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'parent_id'); ?>
-		<?php echo $form->textField($model,'parent_id'); ?>
+        <?php
+        $category_list = CHtml::listData(Category::model()->findAll(), 'id', 'title');
+        $options = array(
+            'tabindex' => '0',
+            'empty' => '(not set)',
+        );
+        ?>
+        <?php echo $form->dropDownList($model,'parent_id', $category_list, $options); ?>
 		<?php echo $form->error($model,'parent_id'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>10,'maxlength'=>10)); ?>
+        <?php echo $form->listBox($model,'type',array(
+            Category::TYPE_EXTERNAL_LINK => Category::TYPE_EXTERNAL_LINK,
+            Category::TYPE_SELF_LINK => Category::TYPE_SELF_LINK,
+            Category::TYPE_PAGE => Category::TYPE_PAGE),
+            array('size' => '0')); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
 

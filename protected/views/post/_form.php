@@ -51,7 +51,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'category_id'); ?>
-		<?php echo $form->textField($model,'category_id'); ?>
+        <?php
+        $category_list = CHtml::listData(Category::model()->findAll(), 'id', 'title');
+        $options = array(
+            'tabindex' => '0',
+            'empty' => '(not set)',
+        );
+        ?>
+        <?php echo $form->dropDownList($model,'category_id', $category_list, $options); ?>
 		<?php echo $form->error($model,'category_id'); ?>
 	</div>
 
