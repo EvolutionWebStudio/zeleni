@@ -29,9 +29,13 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Category', 'url'=>array('/category/index')),
+				array('label'=>'Slider', 'url'=>array('/slider/index')),
+				array('label'=>'Post', 'url'=>array('/post/index')),
+				array('label'=>'Banner', 'url'=>array('/banner/index')),
+				array('label'=>'Album', 'url'=>array('/album/index')),
+				array('label'=>'Image', 'url'=>array('/image/index')),
+				array('label'=>'Promo', 'url'=>array('/promo/index')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

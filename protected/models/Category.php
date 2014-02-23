@@ -119,4 +119,32 @@ class Category extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public static function getMainManu(){
+        $criteria=new CDbCriteria;
+        $criteria->condition = "parent_id IS NULL AND type != 'PAGE'";
+        $criteria->order = "'order'";
+        $menu = Category::model()->findAll($criteria);
+        foreach ($menu as $row) {
+            $subCategories = Category::getMenuSubCategories($row->id,$row->alias);
+            if($subCategories)
+                $categories[] = array('label' => $row['title'], 'url' => array('/'.$row['alias']), 'items' => $subCategories);
+            else
+            $categories[] = array('label' => $row['title'], 'url' => array('/'.$row['alias']));
+        }
+        $menu = array('items'=>$categories);
+        return $menu;
+    }
+    public function getMenuSubCategories($id,$alias){
+        $subCategories = Category::model()->findAllByAttributes(array(
+            'parent_id' => $id,
+        ));
+        if($subCategories)
+        foreach ($subCategories as $row){
+            $data[] = array('label' => $row['title'], 'url' => array($alias.'/'.$row['alias']));
+        }
+        else
+            $data = array();
+        return $data;
+    }
 }
