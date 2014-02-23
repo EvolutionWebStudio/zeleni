@@ -104,6 +104,9 @@ body {
 p {
     line-height: 1.2rem;
 }
+h1 {
+    font-family: "Georgia", Times, sans-serif;
+}
 nav ul {
     list-style: none;
 }
@@ -127,7 +130,7 @@ nav ul {
         background: #250011;
     }
 .link-arrow {
-    color: #ee8540;
+    color: #f37021;
     font-weight: bold;
 }
 
@@ -153,6 +156,7 @@ nav ul {
     width: 1340px;
     margin: auto;
     border-bottom: 2px solid #f37021;
+    border-top: 1px solid #c2c3bf;
 }
 .logo {
    text-transform: uppercase;
@@ -212,7 +216,6 @@ nav ul {
             color: #fff;
             font-size: 48px;
             line-height: 48px;
-            font-family: "Georgia", Times, sans-serif;
         }
         .main-banner .caption-wrapper h2 {
             margin: 0;
@@ -220,8 +223,8 @@ nav ul {
             font-size: 24px;
             line-height: 28px;
         }
-    .main-banner .image-wrapper {
-
+    .main-banner .image-wrapper.wider-image {
+        width: 1095px;
     }
     .banner-bottom-line {
         position: relative;
@@ -234,9 +237,6 @@ nav ul {
 
 /* SLIDER */
 
-.slider .image-wrapper {
-    width: 1095px;
-}
 .slider-menu ul {
     margin: 0;
     font-size: 14px;
@@ -258,8 +258,111 @@ nav ul {
     .slider-menu .slide-number {
         padding: 0 10px 0 0;
         font-size: 24px;
-        font-family: "Georgia", Times, sans-serif;
     }
+
+/* CATEGORY HEADER */
+
+.category-header .caption-wrapper h1 {
+    font-size: 26px;
+    line-height: 30px;
+}
+
+/* MAIN WRAPPER */
+
+.main-wrapper {
+    position: relative; /* TODO ispraviti sliku preko linije */
+    margin-top: -8px;
+    border-top: 8px solid #250011;
+    z-index: 3;
+}
+
+/* MAIN SIDEBAR */
+
+.main-sidebar {
+    width: 245px;
+    padding: 20px 0 50px 25px;
+    margin: 0 0 50px;
+    border-right: 1px solid #888b88;
+    text-transform: uppercase;
+}
+    .main-sidebar ul {
+         margin: 0;
+    }
+        .main-sidebar ul ul {
+            border-top: 1px solid #dbdcdb;
+        }
+        .main-sidebar nav > ul > li {
+            border-bottom: 1px solid #dbdcdb;
+        }
+    .main-sidebar nav a {
+        display: inline-block;
+        width: 175px;
+        padding: 5px 0;
+
+        color: #58595b;
+    }
+        .main-sidebar nav ul ul a {
+            padding-left: 20px;
+        }
+
+/* MAIN CONTENT */
+
+.main-content {
+    width: 975px;
+}
+.main-content article {
+   padding-left: 35px;
+}
+    .article-title {
+        padding-left: 35px;
+        margin: 0;
+        background: #ebebe3;
+        line-height: 65px;
+        font-size: 40px;
+        color: #58595b;
+    }
+.article-menu ul {
+    display: inline-block;
+    margin: 0 0 0 35px;
+    border-top: 1px solid #dbdcdb;
+}
+    .article-menu ul li {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0;
+        text-transform: uppercase;
+        border-right: 1px solid #dbdcdb;
+    }
+        .article-menu ul li a {
+            color: #58595b;
+        }
+.main-content .article-content {
+    width: 500px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+    .main-content .article-content h2 {
+        font-size: 18px;
+        color: #58595b;
+        text-transform: uppercase;
+    }
+    .main-content .article-content h3 {
+        margin: 10px 0 0 0;
+        font-size: 14px;
+        color: #6d6e71;
+        text-transform: uppercase;
+    }
+    .main-content .article-content p {
+        margin: 0;
+    }
+    .main-content .article-content a {
+        color: #f37021;
+        font-style: italic;
+    }
+    .main-content .article-content article {
+        margin: 20px 0;
+    }
+
 
 /* FOOTER */
 
