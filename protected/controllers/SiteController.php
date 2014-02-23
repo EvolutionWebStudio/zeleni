@@ -22,7 +22,7 @@ class SiteController extends Controller
 	}
 
     public function getLang(){
-        Yii::app()->session['_lang']
+        Yii::app()->session['_lang'];
     }
 
 	/**

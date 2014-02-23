@@ -128,14 +128,14 @@ class Category extends CActiveRecord
         foreach ($menu as $row) {
             $subCategories = Category::getMenuSubCategories($row->id,$row->alias);
             if($subCategories)
-                $categories[] = array('label' => $row['title'], 'url' => array('/'.$row['alias']), 'items' => $subCategories);
+                $categories[] = array('label' => $row['title'], 'itemOptions' => array('class' => 'large-3 columns'), 'activeItems' => true, 'url' => array('/'.$row['alias']), 'items' => $subCategories);
             else
-            $categories[] = array('label' => $row['title'], 'url' => array('/'.$row['alias']));
+            $categories[] = array('label' => $row['title'], 'itemOptions' => array('class' => 'large-3 columns'), 'url' => array('/'.$row['alias']));
         }
-        $menu = array('items'=>$categories);
+        $menu = array('items'=>$categories, 'htmlOptions' => array('class' => 'row collapse'));
         return $menu;
     }
-    public function getMenuSubCategories($id,$alias){
+    public static function getMenuSubCategories($id,$alias){
         $subCategories = Category::model()->findAllByAttributes(array(
             'parent_id' => $id,
         ));
