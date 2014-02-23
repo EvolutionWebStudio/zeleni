@@ -19,6 +19,10 @@
  */
 class Category extends CActiveRecord
 {
+
+    const TYPE_SELF_LINK = 'SELF';
+    const TYPE_EXTERNAL_LINK = 'EXTERNAL';
+    const TYPE_PAGE = 'PAGE';
 	/**
 	 * @return string the associated database table name
 	 */
