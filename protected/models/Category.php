@@ -132,7 +132,7 @@ class Category extends CActiveRecord
             else
             $categories[] = array('label' => $row['title'], 'url' => array('/'.$row['alias']));
         }
-        $menu = array('items'=>$categories);
+        $menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>''),'activeCssClass'=>'selected', 'activateItems' => true);
         return $menu;
     }
     public function getMenuSubCategories($id,$alias){

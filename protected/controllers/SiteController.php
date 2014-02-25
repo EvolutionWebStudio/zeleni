@@ -22,7 +22,10 @@ class SiteController extends Controller
 	}
 
     public function getLang(){
-        Yii::app()->session['_lang']
+        if(!isset(Yii::app()->session['_lang']))
+            Yii::app()->session['_lang'] = 'sr';
+        $this->lang = Yii::app()->session['_lang'];
+
     }
 
 	/**
@@ -31,7 +34,9 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-        $slides = Slider::model()->findAll();
+        $slides = Slider::model()->findAllByAttributes(array(
+            'lang' => $this->lang,
+        ));
 
         $this->render('index',array(
             'slides'=>$slides,
@@ -44,19 +49,23 @@ class SiteController extends Controller
      */
     public function actionView()
     {
+        $this->getLang();
         $category = $_GET['category'];
 
         $category = Category::model()->findByAttributes(array(
             'alias' => $category,
             'parent_id' => null,
+            'lang' => $this->lang,
         ));
 
         if($category){
             $post = Post::model()->findByAttributes(array(
                 'category_id' => $category->id,
+                'lang' => $this->lang,
             ));
             $subCategories = Category::model()->findAllByAttributes(array(
                 'parent_id' => $category->id,
+                'lang' => $this->lang,
             ));
                 $this->render('view',array(
                     'category'=>$category,
@@ -68,6 +77,7 @@ class SiteController extends Controller
         }
         else{
             $this->redirect(array('/'));
+
         }
 
 
