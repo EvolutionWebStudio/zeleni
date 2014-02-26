@@ -11,6 +11,7 @@
  * @property string $lang
  * @property integer $parent_id
  * @property string $type
+ * @property string $image
  *
  * The followings are the available model relations:
  * @property Category $parent
@@ -44,7 +45,7 @@ class Category extends CActiveRecord
 			array('lang, type', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, alias, order, lang, parent_id, type', 'safe', 'on'=>'search'),
+			array('id, title, alias, order, lang, parent_id, type, image', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -75,6 +76,7 @@ class Category extends CActiveRecord
 			'lang' => 'Lang',
 			'parent_id' => 'Parent',
 			'type' => 'Type',
+			'image' => 'Slika',
 		);
 	}
 
@@ -103,6 +105,7 @@ class Category extends CActiveRecord
 		$criteria->compare('lang',$this->lang,true);
 		$criteria->compare('parent_id',$this->parent_id);
 		$criteria->compare('type',$this->type,true);
+		$criteria->compare('image',$this->image,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -135,14 +138,67 @@ class Category extends CActiveRecord
         $menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>''),'activeCssClass'=>'selected', 'activateItems' => true);
         return $menu;
     }
-    public function getMenuSubCategories($id,$alias){
+
+	public static function getSubManu(){
+		$criteria=new CDbCriteria;
+		$criteria->condition = "parent_id IS NULL AND type != 'PAGE'";
+		$criteria->order = "'order'";
+		$menu = Category::model()->findAll($criteria);
+		foreach ($menu as $row) {
+			$subCategories = Category::getSubMenuSubCategories($row->id,$row->alias);
+			if($subCategories)
+				$categories[] = array('label' => $row['title'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'itemOptions' => array('class' => ''), 'activeItems' => true, 'url' => array('/'.$row['alias']), 'items' => $subCategories);
+			else
+				$categories[] = array('label' => $row['title'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'itemOptions' => array('class' => ''), 'url' => array('/'.$row['alias']));
+		}
+		$menu = array(
+			'items'=>$categories,
+			'encodeLabel'=>false,
+			'htmlOptions'=>array('class'=>''),
+			'activeCssClass'=>'selected',
+			'activateItems' => true,
+		);
+		return $menu;
+	}
+
+	public static function getSubMenuSubCategories($id,$alias){
+		$subCategories = Category::model()->findAllByAttributes(array(
+			'parent_id' => $id,
+		));
+		if($subCategories)
+			foreach ($subCategories as $row){
+				if($row['type'] == Category::TYPE_SELF_LINK)
+					$data[] = array('label' => $row['title'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array('/' . $alias . '#' . $row['alias']));
+				else
+					$data[] = array('label' => $row['title'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array($alias.'/'.$row['alias']));
+			}
+		else
+			$data = array();
+		return $data;
+	}
+
+	public static function getTopManu(){
+		$criteria=new CDbCriteria;
+		$criteria->condition = "parent_id IS NULL AND type = 'PAGE'";
+		$criteria->order = "'order'";
+		$menu = Category::model()->findAll($criteria);
+		foreach ($menu as $row) {
+			$categories[] = array('label' => $row['title'], 'itemOptions' => array('class' => ''), 'url' => array('/'.$row['alias']));
+		}
+		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>'large-6 columns text-left'),'activeCssClass'=>'selected', 'activateItems' => true);
+		return $menu;
+	}
+
     public static function getMenuSubCategories($id,$alias){
         $subCategories = Category::model()->findAllByAttributes(array(
             'parent_id' => $id,
         ));
         if($subCategories)
         foreach ($subCategories as $row){
-            $data[] = array('label' => $row['title'], 'url' => array($alias.'/'.$row['alias']));
+	        if($row['type'] == Category::TYPE_SELF_LINK)
+                $data[] = array('label' => $row['title'], 'url' => array('/' . $alias.'#'.$row['alias']));
+	        else
+                $data[] = array('label' => $row['title'], 'url' => array($alias.'/'.$row['alias']));
         }
         else
             $data = array();

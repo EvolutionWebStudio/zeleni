@@ -32,6 +32,12 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'image'); ?>
+		<?php echo $form->textField($model,'image'); ?>
+		<?php echo $form->error($model,'image'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'order'); ?>
 		<?php echo $form->textField($model,'order'); ?>
 		<?php echo $form->error($model,'order'); ?>

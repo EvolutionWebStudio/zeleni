@@ -42,6 +42,8 @@ return array(
 			'urlFormat'=>'path',
 			'rules'=>array(
                 '<controller:(category|slider|banner|album|image|post|promo)>/<action:\w+>'=>'<controller>/<action>',
+				'login' => 'site/login',
+				'logout' => 'site/logout',
                 '<category:[0-9a-zA-Z_\-]+>/<subcategory:[0-9a-zA-Z_\-]+>/*'=>'/site/view/',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

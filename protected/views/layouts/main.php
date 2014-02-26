@@ -27,11 +27,7 @@
     <div class="bar gray">
         <nav class="info-menu">
             <div class="row collapse wide">
-                <ul class="large-6 columns text-left">
-                    <li><a href="#">Kontaktirajte nas</a></li>
-                    <li><a href="#">Lokacija</a></li>
-                    <li><a href="#">Galerija slika</a></li>
-                </ul>
+	            <?php $this->widget('zii.widgets.CMenu', Category::getTopManu()); ?>
                 <ul class="large-6 columns text-right">
                     <li>T:+381 34 6709-141</li>
                     <li>F:+381 34 6709-230</li>
