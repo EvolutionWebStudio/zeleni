@@ -51,6 +51,7 @@ class SiteController extends Controller
     {
         $this->getLang();
         $category = $_GET['category'];
+	    $subCategory = (isset($_GET['subcategory']))? $_GET['subcategory'] : null;
 
         $category = Category::model()->findByAttributes(array(
             'alias' => $category,
@@ -82,6 +83,13 @@ class SiteController extends Controller
 
 
     }
+
+	public function actionGalerija_slika() {
+		$this->getLang();
+		$this->render('galerija',array(
+
+		));
+	}
 
 	/**
 	 * This is the action to handle external exceptions.

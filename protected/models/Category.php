@@ -162,15 +162,25 @@ class Category extends CActiveRecord
 	}
 
 	public static function getSubMenuSubCategories($id,$alias){
-		$subCategories = Category::model()->findAllByAttributes(array(
+		$menu = Category::model()->findAllByAttributes(array(
 			'parent_id' => $id,
 		));
-		if($subCategories)
-			foreach ($subCategories as $row){
-				if($row['type'] == Category::TYPE_SELF_LINK)
-					$data[] = array('label' => $row['title'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array('/' . $alias . '#' . $row['alias']));
-				else
-					$data[] = array('label' => $row['title'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array($alias.'/'.$row['alias']));
+		if($menu)
+			foreach ($menu as $row){
+				$subCategories = Category::getSubMenuSubCategories($row->id,$alias.'/'.$row->alias);
+				if($subCategories) {
+					if($row['type'] == Category::TYPE_SELF_LINK)
+						$data[] = array('label' => $row['title'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array('/' . $alias . '#' . $row['alias']), 'items' => $subCategories);
+					else
+						$data[] = array('label' => $row['title'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array($alias.'/'.$row['alias']), 'items' => $subCategories);
+				}
+				else {
+					if($row['type'] == Category::TYPE_SELF_LINK)
+						$data[] = array('label' => $row['title'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array('/' . $alias . '#' . $row['alias']));
+					else
+						$data[] = array('label' => $row['title'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array($alias.'/'.$row['alias']));
+				}
+
 			}
 		else
 			$data = array();

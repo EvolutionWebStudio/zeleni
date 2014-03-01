@@ -40,10 +40,12 @@ return array(
 
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+			'showScriptName'=>false,
 			'rules'=>array(
                 '<controller:(category|slider|banner|album|image|post|promo)>/<action:\w+>'=>'<controller>/<action>',
 				'login' => 'site/login',
 				'logout' => 'site/logout',
+				'galerija-slika' => 'site/galerija_slika',
                 '<category:[0-9a-zA-Z_\-]+>/<subcategory:[0-9a-zA-Z_\-]+>/*'=>'/site/view/',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
