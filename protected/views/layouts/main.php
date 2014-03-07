@@ -39,7 +39,9 @@
 
     <header class="main-header">
         <div class="row collapse wide">
-            <h1 class="logo large-4 columns"><span>GREENY</span>proizvodnja i čuvanje voća</h1>
+            <h1 class="logo large-4 columns clearfix">
+                <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-logo-image.png" alt=""/>
+                <span>GREENY</span>proizvodnja i čuvanje voća</h1>
             <nav class="main-menu large-8 columns">
                 <?php $this->widget('zii.widgets.CMenu', Category::getMainManu()); ?>
             </nav>
