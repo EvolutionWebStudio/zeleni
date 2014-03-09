@@ -27,7 +27,7 @@
     <div class="bar gray">
         <nav class="info-menu">
             <div class="row collapse wide">
-	            <?php $this->widget('zii.widgets.CMenu', Category::getTopManu()); ?>
+	            <?php $this->widget('zii.widgets.CMenu', Menu::getTopMenu()); ?>
                 <ul class="large-6 columns text-right">
                     <li>T:+381 34 6709-141</li>
                     <li>F:+381 34 6709-230</li>

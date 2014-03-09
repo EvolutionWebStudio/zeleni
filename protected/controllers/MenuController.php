@@ -1,6 +1,6 @@
 <?php
 
-class SliderController extends Controller
+class MenuController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -32,11 +32,11 @@ class SliderController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'admin','delete'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array(),
+				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -62,14 +62,14 @@ class SliderController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Slider;
+		$model=new Menu;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Slider']))
+		if(isset($_POST['Menu']))
 		{
-			$model->attributes=$_POST['Slider'];
+			$model->attributes=$_POST['Menu'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +91,9 @@ class SliderController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Slider']))
+		if(isset($_POST['Menu']))
 		{
-			$model->attributes=$_POST['Slider'];
+			$model->attributes=$_POST['Menu'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +122,7 @@ class SliderController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Slider');
+		$dataProvider=new CActiveDataProvider('Menu');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class SliderController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Slider('search');
+		$model=new Menu('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Slider']))
-			$model->attributes=$_GET['Slider'];
+		if(isset($_GET['Menu']))
+			$model->attributes=$_GET['Menu'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class SliderController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Slider the loaded model
+	 * @return Menu the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Slider::model()->findByPk($id);
+		$model=Menu::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +160,11 @@ class SliderController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Slider $model the model to be validated
+	 * @param Menu $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='slider-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='menu-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

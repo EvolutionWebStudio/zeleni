@@ -34,6 +34,7 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->getLang();
         $slides = Slider::model()->findAllByAttributes(array(
             'lang' => $this->lang,
         ));
