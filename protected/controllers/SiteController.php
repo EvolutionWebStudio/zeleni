@@ -56,7 +56,6 @@ class SiteController extends Controller
 
         $category = Category::model()->findByAttributes(array(
             'alias' => $category,
-            'parent_id' => null,
             'lang' => $this->lang,
         ));
 

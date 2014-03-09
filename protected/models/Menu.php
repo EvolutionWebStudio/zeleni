@@ -130,7 +130,78 @@ class Menu extends CActiveRecord
 		foreach ($menu as $row) {
 				$categories[] = array('label' => $row['item'], 'url' => array('/'.$row['category']->alias), 'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false);
 		}
-		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>'large-6 columns text-left'),'activeCssClass'=>'active', 'activateItems' => true);
+		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>'large-6 columns text-left'), 'activateItems' => true);
 		return $menu;
+	}
+
+	public static function getMainMenu() {
+		$criteria=new CDbCriteria;
+		$criteria->condition = "type = 'Main' AND lang = '" . Menu::getLang() . "' AND parent_item IS NULL";
+		$criteria->order = "'order'";
+		$menu = Menu::model()->findAll($criteria);
+		foreach ($menu as $row) {
+			$subCategories = Menu::getSubMenu($row->id,$row['category']->alias);
+			if($subCategories)
+				$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'large-3 columns'), 'activeItems' => true, 'url' => array('/'.$row['category']->alias),'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false, 'items' => $subCategories);
+			else
+				$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'large-3 columns'), 'url' => array('/'.$row['category']->alias), 'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false);
+		}
+		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>''),'activeCssClass'=>'active', 'activateItems' => true);
+		return $menu;
+	}
+	public static function getSubMenu($id,$alias){
+		$criteria=new CDbCriteria;
+		$criteria->condition = "parent_item = $id AND lang = '" . Menu::getLang() . "'";
+		$criteria->order = "'order'";
+		$subMenu = Menu::model()->findAll($criteria);
+		if($subMenu)
+			foreach ($subMenu as $row){
+				if($row['category']->type == Category::TYPE_SELF_LINK)
+					$data[] = array('label' => $row['item'], 'url' => array('/' . $alias.'#'.$row['category']->alias));
+				else
+					$data[] = array('label' => $row['item'], 'url' => array($alias.'/'.$row['category']->alias));
+			}
+		else
+			$data = array();
+		return $data;
+	}
+
+	public static function getSidebarMenu(){
+		$criteria=new CDbCriteria;
+		$criteria->condition = "type = 'Sidebar' AND lang = '" . Menu::getLang() . "' AND parent_item IS NULL";
+		$criteria->order = "'order'";
+		$menu = Menu::model()->findAll($criteria);
+		foreach ($menu as $row) {
+			$subCategories = Menu::getSidebarSubMenu($row->id, $row['category']->alias);
+			if($subCategories)
+				$categories[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'itemOptions' => array('class' => ''), 'activeItems' => true, 'url' => array('/'.$row['category']->alias), 'items' => $subCategories);
+			else
+				$categories[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'itemOptions' => array('class' => ''), 'url' => array('/'.$row['category']->alias));
+		}
+		$menu = array(
+			'items'=>$categories,
+			'encodeLabel'=>false,
+			'htmlOptions'=>array('class'=>''),
+			'activeCssClass'=>'selected',
+			'activateItems' => true,
+		);
+		return $menu;
+	}
+
+	public static function getSidebarSubMenu($id,$alias){
+		$criteria=new CDbCriteria;
+		$criteria->condition = "parent_item = $id AND lang = '" . Menu::getLang() . "'";
+		$criteria->order = "'order'";
+		$subMenu = Menu::model()->findAll($criteria);
+		if($subMenu)
+			foreach ($subMenu as $row){
+					if($row['category']->type == Category::TYPE_SELF_LINK)
+						$data[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array('/' . $alias . '#' . $row['category']->alias));
+					else
+						$data[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array($alias.'/'.$row['category']->alias));
+			}
+		else
+			$data = array();
+		return $data;
 	}
 }

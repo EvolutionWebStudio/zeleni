@@ -19,7 +19,7 @@
 <div class="main-wrapper row collapse wide">
     <aside class="main-sidebar columns">
         <nav>
-	        <?php $this->widget('zii.widgets.CMenu', Category::getSubManu()); ?>
+	        <?php $this->widget('zii.widgets.CMenu', Menu::getSidebarMenu()); ?>
         </nav>
     </aside>
 
@@ -34,6 +34,19 @@
                 </ul>
             </nav>
 	        <div class="article-content">
+		        <?php if($post): ?>
+		        <article>
+			        <h2><?php echo $post->title; ?></h2>
+			        <?php echo $post->content; ?>
+		        </article>
+			        <?php
+			            if($category->alias == 'kontaktirajte-nas')
+				            $this->renderPartial('_contact_form');
+			            if($category->alias == 'lokacija')
+				            $this->renderPartial('_location_map');
+			        ?>
+		        <?php endif; ?>
+	        </div>
 	            <?php foreach($subCategories as $posts): ?>
 		            <?php foreach($posts->posts as $p): ?>
 			     <a name=<?php echo $posts->alias; ?>></a>
@@ -44,13 +57,6 @@
                 </article>
 		            <?php endforeach; ?>
 	            <?php endforeach; ?>
-				<?php if($post): ?>
-                <article>
-                    <h2><?php echo $post->title; ?></h2>
-	                <?php echo $post->content; ?>
-                </article>
-		        <?php endif; ?>
-            </div>
         </section>
     </div>
 

@@ -36,6 +36,7 @@
 				array('label'=>'Album', 'url'=>array('/album/index')),
 				array('label'=>'Image', 'url'=>array('/image/index')),
 				array('label'=>'Promo', 'url'=>array('/promo/index')),
+				array('label'=>'Menu', 'url'=>array('/menu/index')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

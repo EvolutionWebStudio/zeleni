@@ -59,7 +59,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'parent_item'); ?>
 		<?php
-		$category_list = CHtml::listData(Category::model()->findAll(), 'id', 'item');
+		$category_list = CHtml::listData(Menu::model()->findAll(), 'id', 'item');
 		$options = array(
 			'tabindex' => '0',
 			'empty' => '(not set)',
