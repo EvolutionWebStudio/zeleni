@@ -99,7 +99,7 @@ textarea {
 
 body {
     font-size: 14px;
-    font-family: "Myriad Pro", arial, helvetica, sans-serif; /*TODO Promjeniti u DINPro */
+    font-family: Arial, helvetica, sans-serif; /*TODO Promjeniti u DINPro */
 }
 p {
     line-height: 1.2rem;
@@ -111,11 +111,11 @@ nav ul {
     list-style: none;
 }
 .row.wide {
-    padding-left: 120px;
-    min-width: 1340px;
+    /*padding-left: 120px;*/
+    min-width: 1220px;
 }
 .row.wider {
-    min-width: 1580px;
+    min-width: 1440px;
 }
 .bar {
     width: 100%;
@@ -152,7 +152,7 @@ nav ul {
     }
 
 .main-header {
-    padding-top: 40px;
+    padding-top: 20px;
     width: 1340px;
     margin: auto;
     border-bottom: 2px solid #f37021;
@@ -162,9 +162,15 @@ nav ul {
     text-transform: uppercase;
     font-size: 14px;
     color: #231f20;
-    font-family: "Myriad Pro", arial, helvetica, sans-serif; /*TODO Promjeniti u DINPro */
+    font-family: Arial, helvetica, sans-serif;
+    background: url('../img/greeny-logo-image.png') no-repeat;
 }
+    .logo img {
+        float: left;
+        margin-right: 25px;
+    }
     .logo span {
+        margin: 20px 0 0 130px;
         text-indent: -9999px;
         display: block;
         width: 141px;
@@ -180,7 +186,7 @@ nav ul {
     }
     .main-menu a {
         display: block;
-        padding: 34px 0 5px;
+        padding: 54px 0 5px;
         text-transform: uppercase;
         font-size: 18px;
         color: #250011;
@@ -196,18 +202,18 @@ nav ul {
 /* MAIN BANNER */
 
 .main-banner {
-
+    position: relative;
 }
     .main-banner .logo-image {
-        width: 240px;
-        height: 275px;
-        margin-top: 10px;
-        background: url("../img/greeny-logo-image.png") 0 0 no-repeat;
+        position: absolute;
+        left: -100px;
+        width: 180px;
+        height: 197px;
+        background: url("../img/greeny-listovi-veliki.png") 0 0 no-repeat;
     }
     .main-banner .caption-wrapper {
-        width: 200px;
-        margin-right: 45px;
-        padding-top: 70px;
+        width: 235px;
+        padding: 80px 0 0;
         color: #fff;
         font-size: 14px;
         line-height: 15px ;
@@ -228,13 +234,15 @@ nav ul {
             line-height: 28px;
         }
     .main-banner .image-wrapper.wider-image {
+        margin-right: -110px;
         width: 1095px;
     }
     .banner-bottom-line {
-        position: relative;
-        width: 1340px;
+        position: absolute;
+        bottom: 0;
+        width: 1440px;
         height: 8px;
-        margin: -8px auto 0;
+        margin-left: -110px;
         background: #250011;
         z-index: 3;
     }
@@ -276,9 +284,6 @@ nav ul {
 
 .main-wrapper {
     position: relative; /* TODO ispraviti sliku preko linije */
-    margin-top: -8px;
-    border-top: 8px solid #250011;
-    z-index: 3;
 }
 
 /* MAIN SIDEBAR */
@@ -293,7 +298,7 @@ nav ul {
     .main-sidebar ul {
          margin: 0;
     }
-        .main-sidebar ul ul {
+        .main-sidebar ul ul ul {
             border-top: 1px solid #dbdcdb;
         }
         .main-sidebar nav > ul > li {
@@ -368,6 +373,25 @@ nav ul {
         margin: 20px 0;
     }
 
+/* -- POCETNA */
+
+.top-promo {
+    position: relative;
+    margin-top: 50px;
+    border-top: 1px solid #c2c3bf;
+    padding: 30px 0;
+}
+    .top-promo .promo-logo {
+        position: absolute;
+        top: -60px;
+        left: 50px;
+    }
+    .top-promo p {
+        margin: 0;
+    }
+    .top-promo .button {
+        margin: 0;
+    }
 
 /* FOOTER */
 
@@ -489,6 +513,14 @@ nav ul {
 
 .clearfix {
     *zoom: 1;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
 }
 
 /* ==========================================================================
