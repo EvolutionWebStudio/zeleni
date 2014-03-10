@@ -28,9 +28,9 @@
             <h1 class="article-title"><?php echo $category->title; ?></h1>
             <nav class="article-menu">
                 <ul>
-	                <?php foreach($subCategories as $sc): ?>
-		                <li><a href="<?php echo '#' . $sc->alias; ?>"><?php echo $sc->title; ?></a></li>
-	                <?php endforeach;?>
+	                <?php if($subCategories): foreach($subCategories as $sc): ?>
+		                <li><a href="<?php echo ($sc->type == Category::TYPE_SELF_LINK)?'#' . $sc->alias : '/'.$sc->alias; ?>"><?php echo $sc->title; ?></a></li>
+	                <?php endforeach; endif;?>
                 </ul>
             </nav>
 	        <div class="article-content">
@@ -47,13 +47,15 @@
 			        ?>
 		        <?php endif; ?>
 	        </div>
-	            <?php foreach($subCategories as $posts): ?>
+	            <?php if($subCategories) foreach($subCategories as $posts): ?>
 		            <?php foreach($posts->posts as $p): ?>
 			     <a name=<?php echo $posts->alias; ?>></a>
                 <article>
                     <h2><?php echo $p->title; ?></h2>
 					<?php echo $p->content; ?>
+	                <?php if($p->link): ?>
                     <a href="<?php echo $p->link; ?>"><?php echo $p->link_text; ?> ></a>
+				    <?php endif; ?>
                 </article>
 		            <?php endforeach; ?>
 	            <?php endforeach; ?>

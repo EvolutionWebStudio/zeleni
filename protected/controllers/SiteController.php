@@ -58,23 +58,39 @@ class SiteController extends Controller
             'alias' => $category,
             'lang' => $this->lang,
         ));
+	    $subCategory = Category::model()->findByAttributes(array(
+		    'alias' => $subCategory,
+		    'lang' => $this->lang,
+	    ));
 
         if($category){
-            $post = Post::model()->findByAttributes(array(
-                'category_id' => $category->id,
-                'lang' => $this->lang,
-            ));
-            $subCategories = Category::model()->findAllByAttributes(array(
-                'parent_id' => $category->id,
-                'lang' => $this->lang,
-            ));
-                $this->render('view',array(
-                    'category'=>$category,
-                    'post'=>$post,
-                    'subCategories'=>$subCategories,
-                ));
+	        if($subCategory){
+		        $post = Post::model()->findByAttributes(array(
+			        'category_id' => $subCategory->id,
+			        'lang' => $this->lang,
+		        ));
+		        $this->render('view',array(
+			        'category'=>$subCategory,
+			        'post'=>$post,
+			        'subCategories'=>null,
+		        ));
+	        }
+	        else {
+		        $post = Post::model()->findByAttributes(array(
+			        'category_id' => $category->id,
+			        'lang' => $this->lang,
+		        ));
+		        $subCategories = Category::model()->findAllByAttributes(array(
+			        'parent_id' => $category->id,
+			        'lang' => $this->lang,
+		        ));
+		        $this->render('view',array(
+			        'category'=>$category,
+			        'post'=>$post,
+			        'subCategories'=>$subCategories,
+		        ));
+	        }
 
-//            $_GET['subcategory'];
         }
         else{
             $this->redirect(array('/'));
