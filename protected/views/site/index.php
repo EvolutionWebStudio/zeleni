@@ -30,7 +30,7 @@ $this->pageTitle=Yii::app()->name;
             </article>
 
             <div class="image-wrapper wider-image columns">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/slider-placeholder.png" alt="Slider placeholder"/>
+                <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/slider/greeny-tresnja-slide.png" alt="Greeny tresnja"/>
             </div>
             <div class="banner-bottom-line"></div>
         </div>
