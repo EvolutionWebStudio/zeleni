@@ -414,6 +414,7 @@ nav ul {
         position: absolute;
         top: -60px;
         left: 50px;
+        z-index: 6;
     }
     .top-promo p {
         margin: 0;
@@ -422,13 +423,57 @@ nav ul {
         margin: 0;
     }
 
+/* LINK BLOCKS */
+
+.link-blocks {
+    margin: 0;
+    list-style: none;
+}
+    .link-blocks li {
+        display: inline-block;
+        float: left;
+    }
+        .link-blocks li a {
+            position: relative;
+            display: inline-block;
+            width: 244px;
+            height: 245px;
+        }
+            .link-blocks li a span {
+                position: absolute;
+                left: 0;
+                top: 120px;
+                width: 244px;
+                padding: 20px;
+                color: #fff;
+                z-index: 5;
+                line-height: 1rem;
+                font-size: .9rem;
+            }
+
+/* PROMO SOK */
+
+.promo-sok {
+    margin-top: 50px;
+    margin-bottom: 93px;
+    border-top: 1px solid #c2c3bf;
+    border-bottom: 1px solid #c2c3bf;
+}
+    .promo-sok .sok-logo {
+        position: absolute;
+        top: -50px;
+    }
+    .promo-sok article {
+        padding: 40px 20px 20px;
+    }
+
 /* FOOTER */
 
 .main-footer {
     min-height: 175px;
-    padding-top: 10px;
+    padding-top: 30px;
     color: #fff;
-    font-size: 14px;
+    font-size: .9rem;
 }
     .main-footer ul {
         margin: 0;
@@ -436,7 +481,8 @@ nav ul {
     }
         .main-footer ul li {
             display: inline-block;
-            padding: 0 5px;
+            padding: 0 10px;
+            font-size: .9rem;
         }
 
 
