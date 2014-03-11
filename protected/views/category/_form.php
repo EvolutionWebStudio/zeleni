@@ -26,15 +26,21 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'content'); ?>
+		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'content'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'alias'); ?>
 		<?php echo $form->textField($model,'alias',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'alias'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'image'); ?>
-		<?php echo $form->textField($model,'image'); ?>
-		<?php echo $form->error($model,'image'); ?>
+		<?php echo $form->labelEx($model,'color'); ?>
+		<?php echo $form->textField($model,'color'); ?>
+		<?php echo $form->error($model,'color'); ?>
 	</div>
 
 	<div class="row">

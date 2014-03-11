@@ -30,6 +30,7 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Category', 'url'=>array('/category/index')),
+				array('label'=>'Category Images', 'url'=>array('/categoryimage/index')),
 				array('label'=>'Slider', 'url'=>array('/slider/index')),
 				array('label'=>'Post', 'url'=>array('/post/index')),
 				array('label'=>'Banner', 'url'=>array('/banner/index')),

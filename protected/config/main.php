@@ -42,7 +42,7 @@ return array(
 			'urlFormat'=>'path',
 			'showScriptName'=>false,
 			'rules'=>array(
-                '<controller:(category|slider|banner|album|image|post|promo|menu)>/<action:\w+>'=>'<controller>/<action>',
+                '<controller:(category|slider|banner|album|image|post|promo|menu|categoryimage)>/<action:\w+>'=>'<controller>/<action>',
 				'login' => 'site/login',
 				'logout' => 'site/logout',
 				'galerija-slika' => 'site/galerija_slika',

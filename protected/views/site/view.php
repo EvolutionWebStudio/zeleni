@@ -10,7 +10,7 @@
             </article>
 
             <div class="image-wrapper wider-image columns">
-                <img src="<?php echo Yii::app()->request->baseUrl . '/img/' . $category->image; ?>" alt="Clanak placeholder" class="clanak-placeholder"/>
+                <img src="<?php echo Yii::app()->request->baseUrl . '/img/articles/' . $category->images[0]->name; ?>" alt="Clanak placeholder" class="clanak-placeholder"/>
             </div>
         </div>
     </div>

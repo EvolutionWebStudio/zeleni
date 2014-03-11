@@ -11,12 +11,14 @@
  * @property string $lang
  * @property integer $parent_id
  * @property string $type
- * @property string $image
+ * @property string $color
+ * @property string $content
  *
  * The followings are the available model relations:
  * @property Category $parent
  * @property Category[] $categories
  * @property Post[] $posts
+ * @property Categoryimage[] $images
  */
 class Category extends CActiveRecord
 {
@@ -42,11 +44,11 @@ class Category extends CActiveRecord
 		return array(
 			array('order, parent_id', 'numerical', 'integerOnly'=>true),
 			array('title, alias', 'length', 'max'=>45),
-			array('image', 'length', 'max'=>255),
-			array('lang, type', 'length', 'max'=>10),
+			array('content','length', 'max'=>255),
+			array('lang, type, color', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, alias, order, lang, parent_id, type, image', 'safe', 'on'=>'search'),
+			array('id, title, alias, order, lang, parent_id, type, color, content', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,6 +63,7 @@ class Category extends CActiveRecord
 			'parent' => array(self::BELONGS_TO, 'Category', 'parent_id'),
 			'categories' => array(self::HAS_MANY, 'Category', 'parent_id'),
 			'posts' => array(self::HAS_MANY, 'Post', 'category_id'),
+			'images' => array(self::HAS_MANY, 'Categoryimage', 'category_id'),
 		);
 	}
 
@@ -77,7 +80,8 @@ class Category extends CActiveRecord
 			'lang' => 'Lang',
 			'parent_id' => 'Parent',
 			'type' => 'Type',
-			'image' => 'Slika',
+			'color' => 'Boja',
+			'content' => 'Sadrzaj',
 		);
 	}
 
@@ -106,7 +110,8 @@ class Category extends CActiveRecord
 		$criteria->compare('lang',$this->lang,true);
 		$criteria->compare('parent_id',$this->parent_id);
 		$criteria->compare('type',$this->type,true);
-		$criteria->compare('image',$this->image,true);
+		$criteria->compare('color',$this->color,true);
+		$criteria->compare('content',$this->content,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
