@@ -1,17 +1,21 @@
 <div class="category-header">
     <div class="bar green">
-        <div class="row collapse wider main-banner">
-            <div class="logo-image columns"></div>
+        <div class="row collapse wide main-banner">
+            <div class="clearfix banner-line top"></div>
+            <div class="logo-image"></div>
 
-            <article class="caption-wrapper columns">
-                <hgroup>
-                    <h1>Slatko, sočno i hrskavo, naše voće je uvek zdravo i ukusno.</h1>
-                </hgroup>
-            </article>
+            <div class="caption-wrapper columns">
+                <article>
+                    <hgroup>
+                        <h1>Slatko, sočno i hrskavo, naše voće je uvek zdravo i ukusno.</h1>
+                    </hgroup>
+                </article>
+            </div>
 
             <div class="image-wrapper wider-image columns">
                 <img src="<?php echo Yii::app()->request->baseUrl . '/img/articles/' . $category->images[0]->name; ?>" alt="Clanak placeholder" class="clanak-placeholder"/>
             </div>
+            <div class="clearfix banner-line bottom"></div>
         </div>
     </div>
 </div>
@@ -34,32 +38,35 @@
                 </ul>
             </nav>
 	        <div class="article-content">
-		        <?php if($post): ?>
-		        <article>
-			        <h2><?php echo $post->title; ?></h2>
-			        <?php echo $post->content; ?>
-		        </article>
-			        <?php
-			            if($category->alias == 'kontaktirajte-nas')
-				            $this->renderPartial('_contact_form');
-			            if($category->alias == 'lokacija')
-				            $this->renderPartial('_location_map');
-			        ?>
-		        <?php endif; ?>
-	        </div>
-	            <?php if($subCategories) foreach($subCategories as $posts): ?>
-		            <?php foreach($posts->posts as $p): ?>
-			     <a name=<?php echo $posts->alias; ?>></a>
-                <article>
-                    <h2><?php echo $p->title; ?></h2>
-					<?php echo $p->content; ?>
-	                <?php if($p->link): ?>
-                    <a href="<?php echo $p->link; ?>"><?php echo $p->link_text; ?> ></a>
-				    <?php endif; ?>
-                </article>
-		            <?php endforeach; ?>
-	            <?php endforeach; ?>
+                <?php if($post): ?>
+                    <article>
+                        <h2><?php echo $post->title; ?></h2>
+                        <?php echo $post->content; ?>
+                    </article>
+
+                    <?php
+                        if($category->alias == 'kontaktirajte-nas')
+                            $this->renderPartial('_contact_form');
+                        if($category->alias == 'lokacija')
+                            $this->renderPartial('_location_map');
+                    ?>
+                <?php endif; ?>
+
+                <?php if($subCategories): ?>
+                    <?php foreach($subCategories as $posts): ?>
+                        <?php foreach($posts->posts as $p): ?>
+                            <article>
+                                <a name=<?php echo $posts->alias; ?>></a>
+                                <h2><?php echo $p->title; ?></h2>
+                                <?php echo $p->content; ?>
+                                <?php if($p->link): ?>
+                                    <a href="<?php echo $p->link; ?>" class="article-link"><?php echo $p->link_text; ?> ></a>
+                                <?php endif; ?>
+                            </article>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
         </section>
     </div>
-
 </div>

@@ -4,49 +4,38 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<?php foreach($slides as $slide): ?>
-<?php echo $slide->title; ?>
-<?php echo $slide->link; ?>
-<?php echo $slide->image; ?>
-<?php echo $slide->content; ?>
-<?php echo $slide->lang; ?>
-<?php echo $slide->number; ?>
-<?php echo $slide->color; ?>
-<?php endforeach; ?>
-
 <div class="slider">
     <div class="bar green">
         <div class="row collapse wide main-banner">
+            <div class="clearfix banner-line top"></div>
             <div class="logo-image"></div>
 
-            <article class="caption-wrapper columns">
-                <hgroup>
-                    <h1>Jabuka</h1>
-                    <h2>iz aranđelovačkih voćnjaka</h2>
-                </hgroup>
+            <?php foreach($slides as $slide): ?>
+                <div>
+                    <div class="caption-wrapper columns">
+                        <article>
+                            <?php echo $slide->content; ?>
+                        </article>
+                    </div>
 
-                <p>Čuvamo svoje proizvode u kontrolisanim temperaturnim i atmosferskim uslovima radi
-                    održavanja kvaliteta i svežine tokom čitave godine.</p>
-            </article>
+                    <div class="image-wrapper wider-image columns">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/slider/<?php echo $slide->image;?>" alt="Greeny tresnja"/>
+                    </div>
+                </div>
+            <?php endforeach; ?>
 
-            <div class="image-wrapper wider-image columns">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/slider-placeholder.png" alt="Slider placeholder"/>
-            </div>
-            <div class="banner-bottom-line"></div>
+            <div class="clearfix banner-line bottom"></div>
         </div>
-        <div class="clearfix banner-bottom-line"></div>
+
     </div>
 
     <div class="bar gray">
         <div class="row wide">
             <nav class="slider-menu">
                 <ul class="clearfix">
-                    <li class="large-2 columns"><a href="#"><span class="slide-number">01</span> Garancija kvaliteta <span class="link-arrow">&gt;</span></a></li>
-                    <li class="large-2 columns"><a href="#"><span class="slide-number">02</span> Greeny EveryDay <span class="link-arrow">&gt;</span></a></li>
-                    <li class="large-2 columns active"><a href="#"><span class="slide-number">03</span> Sveže voće <span class="link-arrow">&gt;</span></a></li>
-                    <li class="large-2 columns"><a href="#"><span class="slide-number">04</span> Trešnja <span class="link-arrow">&gt;</span></a></li>
-                    <li class="large-2 columns"><a href="#"><span class="slide-number">05</span> Jagoda <span class="link-arrow">&gt;</span></a></li>
-                    <li class="large-2 columns"><a href="#"><span class="slide-number">06</span> Jabuka <span class="link-arrow">&gt;</span></a></li>
+                    <?php foreach($slides as $slide): ?>
+                        <li class="large-2 columns"><a href="<?php echo $slide->link; ?>"><span class="slide-number">0<?php echo $slide->number; ?></span> <?php echo $slide->title; ?> <span class="link-arrow">&gt;</span></a></li>
+                    <?php endforeach; ?>
                 </ul>
             </nav>
         </div>
@@ -75,7 +64,62 @@ $this->pageTitle=Yii::app()->name;
             <a class="button small" href="#">Galerija slika</a>
         </div>
     </div>
+    
+    <div class="bar gray">
+        <div class="row wide">
+            <ul class="link-blocks clearfix">
+                <li>
+                    <a href="#">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-prenapregnuti-stubovi-thumb.png" alt=""/>
+                        <span>U svom proizvodnom programu firma Greeny d.o.o proizvodi prednapregnute betonske stubove za
+                        protivgradnu zastitu, vinograde i ograde.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-everyday-sok-pakovanje-thumb.png" alt=""/>
+                        <span>U svom proizvodnom programu firma Greeny d.o.o proizvodi prednapregnute betonske stubove za
+                        protivgradnu zastitu, vinograde i ograde.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-jabuke-thumb.png" alt=""/>
+                        <span>U svom proizvodnom programu firma Greeny d.o.o proizvodi prednapregnute betonske stubove za
+                        protivgradnu zastitu, vinograde i ograde.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-brendirani-frizider-thumb.png" alt=""/>
+                        <span>U svom proizvodnom programu firma Greeny d.o.o proizvodi prednapregnute betonske stubove za
+                        protivgradnu zastitu, vinograde i ograde.</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-hladnjaca-za-cuvanje-voca-thumb.png" alt=""/>
+                        <span>U svom proizvodnom programu firma Greeny d.o.o proizvodi prednapregnute betonske stubove za
+                        protivgradnu zastitu, vinograde i ograde.</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-
+    <div class="row wide promo-sok">
+        <div class="large-4 columns">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-mutni-sok-od-jabuka.png" alt="" class="sok-logo"/>
+            &nbsp;
+        </div>
+        <div class="large-4 columns">
+            <article>
+                ovde ide onaj golemi retardirani tekst
+            </article>
+        </div>
+        <div class="large-4 columns">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-jabuka-sto-posto.png" alt=""/>
+        </div>
+    </div>
 
 </div>

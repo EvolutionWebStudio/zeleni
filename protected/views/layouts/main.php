@@ -53,8 +53,8 @@
     <div class="bar violet">
         <footer class="main-footer">
             <div class="row collapse wide">
-                <p class="large-5 columns copyright">&copy; <?php echo date('Y'); ?> <strong>Greeny</strong> doo Aranđelovac</p>
-                <ul class="large-7 columns text-right">
+                <span class="large-4 columns copyright">&copy; <?php echo date('Y'); ?> <strong>Greeny</strong> doo Aranđelovac</span>
+                <ul class="large-8 columns text-right">
                     <li>Orašac bb, Aranđelovac, Srbija</li>
                     <li>T:+381 34 6709-141</li>
                     <li>F:+381 34 6709-230</li>

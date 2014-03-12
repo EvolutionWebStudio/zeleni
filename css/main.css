@@ -111,7 +111,6 @@ nav ul {
     list-style: none;
 }
 .row.wide {
-    /*padding-left: 120px;*/
     min-width: 1220px;
 }
 .row.wider {
@@ -155,7 +154,6 @@ nav ul {
     padding-top: 20px;
     width: 1340px;
     margin: auto;
-    border-bottom: 2px solid #f37021;
     border-top: 1px solid #c2c3bf;
 }
 .logo {
@@ -180,24 +178,34 @@ nav ul {
 .main-menu ul {
     margin: 0;
 }
-    .main-menu ul li {
+    .main-menu > ul > li {
         display: inline-block;
         text-align: center;
     }
-    .main-menu a {
+    .main-menu > ul > li > a {
         display: block;
         padding: 54px 0 5px;
         text-transform: uppercase;
         font-size: 18px;
         color: #250011;
+        border-bottom: 8px solid transparent;
     }
-        .main-menu li.active a,
-        .main-menu li a:hover {
-            border-bottom: 7px solid #f37021;
+        .main-menu > ul > li.active > a,
+        .main-menu > ul > li:hover > a {
+            border-bottom: 8px solid #f37021;
         }
     .main-menu ul ul {
         display: none;
+        position: absolute;
+        left: 0;
+        background: #fff;
+        z-index: 5;
+        text-align: center;
     }
+        .main-menu > ul > li:hover ul {
+            display: block;
+
+        }
 
 /* MAIN BANNER */
 
@@ -212,12 +220,14 @@ nav ul {
         background: url("../img/greeny-listovi-veliki.png") 0 0 no-repeat;
     }
     .main-banner .caption-wrapper {
-        width: 235px;
-        padding: 80px 0 0;
-        color: #fff;
-        font-size: 14px;
-        line-height: 15px ;
+        width: 245px;
     }
+        .main-banner .caption-wrapper article {
+            padding: 80px 10px 0;
+            color: #fff;
+            font-size: 14px;
+            line-height: 15px;
+        }
         .main-banner .caption-wrapper hgroup {
             margin-bottom: 20px;
         }
@@ -235,16 +245,23 @@ nav ul {
         }
     .main-banner .image-wrapper.wider-image {
         margin-right: -110px;
-        width: 1095px;
+        width: 1085px;
     }
-    .banner-bottom-line {
+    .banner-line {
         position: absolute;
-        bottom: 0;
         width: 1440px;
-        height: 8px;
         margin-left: -110px;
-        background: #250011;
         z-index: 3;
+    }
+    .banner-line.top {
+        top: -2px;
+        height: 2px;
+        background: #f37021;
+    }
+    .banner-line.bottom {
+        bottom: 0;
+        height: 8px;
+        background: #250011;
     }
 
 /* SLIDER */
@@ -348,19 +365,21 @@ nav ul {
         }
 .main-content .article-content {
     width: 500px;
-    margin-top: 30px;
+    margin: 30px 0 50px;
     font-size: 14px;
 }
     .main-content .article-content h2 {
         font-size: 18px;
         color: #58595b;
         text-transform: uppercase;
+        font-weight: normal;
     }
     .main-content .article-content h3 {
         margin: 10px 0 0 0;
         font-size: 14px;
         color: #6d6e71;
         text-transform: uppercase;
+        font-weight: normal;
     }
     .main-content .article-content p {
         margin: 0;
@@ -369,6 +388,16 @@ nav ul {
         color: #f37021;
         font-style: italic;
     }
+        .main-content .article-content a.article-link {
+            display: inline-block;
+            margin-top: .5rem;
+        }
+    .main-content .article-content ul {
+        margin-left: 2rem;
+    }
+        .main-content .article-content ul li {
+            font-weight: normal;
+        }
     .main-content .article-content article {
         margin: 20px 0;
     }
@@ -385,6 +414,7 @@ nav ul {
         position: absolute;
         top: -60px;
         left: 50px;
+        z-index: 6;
     }
     .top-promo p {
         margin: 0;
@@ -393,13 +423,57 @@ nav ul {
         margin: 0;
     }
 
+/* LINK BLOCKS */
+
+.link-blocks {
+    margin: 0;
+    list-style: none;
+}
+    .link-blocks li {
+        display: inline-block;
+        float: left;
+    }
+        .link-blocks li a {
+            position: relative;
+            display: inline-block;
+            width: 244px;
+            height: 245px;
+        }
+            .link-blocks li a span {
+                position: absolute;
+                left: 0;
+                top: 120px;
+                width: 244px;
+                padding: 20px;
+                color: #fff;
+                z-index: 5;
+                line-height: 1rem;
+                font-size: .9rem;
+            }
+
+/* PROMO SOK */
+
+.promo-sok {
+    margin-top: 50px;
+    margin-bottom: 93px;
+    border-top: 1px solid #c2c3bf;
+    border-bottom: 1px solid #c2c3bf;
+}
+    .promo-sok .sok-logo {
+        position: absolute;
+        top: -50px;
+    }
+    .promo-sok article {
+        padding: 40px 20px 20px;
+    }
+
 /* FOOTER */
 
 .main-footer {
     min-height: 175px;
-    padding-top: 10px;
+    padding-top: 30px;
     color: #fff;
-    font-size: 14px;
+    font-size: .9rem;
 }
     .main-footer ul {
         margin: 0;
@@ -407,7 +481,8 @@ nav ul {
     }
         .main-footer ul li {
             display: inline-block;
-            padding: 0 5px;
+            padding: 0 10px;
+            font-size: .9rem;
         }
 
 
