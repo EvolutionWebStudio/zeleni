@@ -68,57 +68,30 @@ $this->pageTitle=Yii::app()->name;
     <div class="bar gray">
         <div class="row wide">
             <ul class="link-blocks clearfix">
-                <li>
-                    <a href="#">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-prenapregnuti-stubovi-thumb.png" alt=""/>
-                        <span>U svom proizvodnom programu firma Greeny d.o.o proizvodi prednapregnute betonske stubove za
-                        protivgradnu zastitu, vinograde i ograde.</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-everyday-sok-pakovanje-thumb.png" alt=""/>
-                        <span>U svom proizvodnom programu firma Greeny d.o.o proizvodi prednapregnute betonske stubove za
-                        protivgradnu zastitu, vinograde i ograde.</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-jabuke-thumb.png" alt=""/>
-                        <span>U svom proizvodnom programu firma Greeny d.o.o proizvodi prednapregnute betonske stubove za
-                        protivgradnu zastitu, vinograde i ograde.</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-brendirani-frizider-thumb.png" alt=""/>
-                        <span>U svom proizvodnom programu firma Greeny d.o.o proizvodi prednapregnute betonske stubove za
-                        protivgradnu zastitu, vinograde i ograde.</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-hladnjaca-za-cuvanje-voca-thumb.png" alt=""/>
-                        <span>U svom proizvodnom programu firma Greeny d.o.o proizvodi prednapregnute betonske stubove za
-                        protivgradnu zastitu, vinograde i ograde.</span>
-                    </a>
-                </li>
+	            <?php foreach($banners as $banner): ?>
+		            <li>
+			            <a href="<?php echo $banner->link; ?>">
+				            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/<?php echo $banner->image; ?>" alt=""/>
+                        <span><?php echo $banner->content; ?></span>
+			            </a>
+		            </li>
+	            <?php endforeach; ?>
             </ul>
         </div>
     </div>
 
     <div class="row wide promo-sok">
         <div class="large-4 columns">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-mutni-sok-od-jabuka.png" alt="" class="sok-logo"/>
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/<?php echo $promo->image1; ?>" alt="" class="sok-logo"/>
             &nbsp;
         </div>
         <div class="large-4 columns">
             <article>
-                ovde ide onaj golemi retardirani tekst
+	            <?php echo $promo->content; ?>
             </article>
         </div>
         <div class="large-4 columns">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-jabuka-sto-posto.png" alt=""/>
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/<?php echo $promo->image2; ?>" alt=""/>
         </div>
     </div>
 

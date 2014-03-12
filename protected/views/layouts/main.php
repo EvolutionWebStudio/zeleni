@@ -1,9 +1,10 @@
 <?php /* @var $this Controller */ ?>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="sr"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="sr"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="sr"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="sr"> <!--<![endif]-->
+<?php if(!isset(Yii::app()->session['_lang'])) Yii::app()->session['_lang'] = 'sr';?>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?php echo Yii::app()->session['_lang']; ?>"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="<?php echo Yii::app()->session['_lang']; ?>"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="<?php echo Yii::app()->session['_lang']; ?>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?php echo Yii::app()->session['_lang']; ?>"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">

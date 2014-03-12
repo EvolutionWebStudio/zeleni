@@ -38,9 +38,17 @@ class SiteController extends Controller
         $slides = Slider::model()->findAllByAttributes(array(
             'lang' => $this->lang,
         ));
+		$promo = Promo::model()->findByAttributes(array(
+			'lang' => $this->lang,
+		));
+		$banners = Banner::model()->findAllByAttributes(array(
+			'lang' => $this->lang,
+		));
 
         $this->render('index',array(
             'slides'=>$slides,
+	        'promo'=>$promo,
+	        'banners'=>$banners,
         ));
 	}
 

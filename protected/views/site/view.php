@@ -7,7 +7,7 @@
             <div class="caption-wrapper columns">
                 <article>
                     <hgroup>
-                        <h1>Slatko, sočno i hrskavo, naše voće je uvek zdravo i ukusno.</h1>
+                        <h1><?php echo $category->content; ?></h1>
                     </hgroup>
                 </article>
             </div>
