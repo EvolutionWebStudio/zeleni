@@ -401,6 +401,10 @@ nav ul {
     .main-content .article-content article {
         margin: 20px 0;
     }
+    .main-content .article-content .main-map {
+        height: 300px;
+        margin-bottom: 2rem;
+    }
 
 /* -- POCETNA */
 

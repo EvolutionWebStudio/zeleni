@@ -1,7 +1,6 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: HoHoHo
- * Date: 3/9/14
- * Time: 4:51 PM
- */ 
+<?php Yii::app()->clientScript->registerScriptFile('http://maps.googleapis.com/maps/api/js?sensor=true', CClientScript::POS_END); ?>
+<?php Yii::app()->clientScript->registerScriptFile('/js/map.js', CClientScript::POS_END);?>
+
+<div class="large-12 columns">
+    <div class="main-map panel2" id="map"></div>
+</div>
