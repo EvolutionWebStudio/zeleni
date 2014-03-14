@@ -44,7 +44,7 @@
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-logo-image.png" alt=""/>
                 <span>GREENY</span>proizvodnja i čuvanje voća</h1>
             <nav class="main-menu large-8 columns">
-                <?php $this->widget('zii.widgets.CMenu', Menu::getMainMenu()); ?>
+                <?php $this->widget('application.components.GMenu', Menu::getMainMenu()); ?>
             </nav>
         </div>
     </header>
