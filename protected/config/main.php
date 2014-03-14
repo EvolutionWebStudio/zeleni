@@ -46,6 +46,7 @@ return array(
 				'login' => 'site/login',
 				'logout' => 'site/logout',
 				'galerija-slika' => 'site/galerija_slika',
+				'kontaktirajte-nas' => 'site/contact',
                 '<category:[0-9a-zA-Z_\-]+>/<subcategory:[0-9a-zA-Z_\-]+>/*'=>'/site/view/',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
@@ -92,6 +93,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'goolub.igor@gmail.com',
 	),
 );

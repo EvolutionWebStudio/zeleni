@@ -132,16 +132,25 @@ class SiteController extends Controller
 	/**
 	 * Displays the contact page
 	 */
-	public function actionContactt()
+	public function actionContact()
 	{
+		$this->getLang();
 		$model=new ContactForm;
+		$category = Category::model()->findByAttributes(array(
+			'alias' => 'kontaktirajte-nas',
+			'lang' => $this->lang,
+		));
+		$post = Post::model()->findByAttributes(array(
+			'category_id' => $category->id,
+			'lang' => $this->lang,
+		));
 		if(isset($_POST['ContactForm']))
 		{
 			$model->attributes=$_POST['ContactForm'];
 			if($model->validate())
 			{
 				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
-				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
+				$subject='=?UTF-8?B?'.base64_encode($model->company).'?=';
 				$headers="From: $name <{$model->email}>\r\n".
 					"Reply-To: {$model->email}\r\n".
 					"MIME-Version: 1.0\r\n".
@@ -152,7 +161,11 @@ class SiteController extends Controller
 				$this->refresh();
 			}
 		}
-		$this->render('contact',array('model'=>$model));
+		$this->render('contact',array(
+			'model'=>$model,
+			'category'=>$category,
+			'post'=>$post,
+		));
 	}
 
 	/**

@@ -14,6 +14,10 @@ class ContactForm extends CFormModel
 	public $phone;
 	public $webSite;
 
+	public function getLang(){
+		if(!isset(Yii::app()->session['_lang']))
+			Yii::app()->session['_lang'] = 'sr';
+	}
 	/**
 	 * Declares the validation rules.
 	 */
@@ -34,8 +38,15 @@ class ContactForm extends CFormModel
 	 */
 	public function attributeLabels()
 	{
+		$this->getLang();
+		if(Yii::app()->session['_lang'] == 'sr')
 		return array(
-			'name' => 'name',
+			'name' => 'Ime',
+			'email' => 'E-mail',
+			'company' => 'Firma',
+			'body' => 'Poruka',
+			'phone' => 'Telefon',
+			'webSite' => 'Web sajt'
 		);
 	}
 }
