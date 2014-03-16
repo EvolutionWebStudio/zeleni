@@ -45,7 +45,7 @@
     </div>
 
     <header class="main-header">
-        <div class="row collapse wide">
+        <div class="row collapse wide relative">
             <h1 class="logo large-4 columns clearfix">
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-logo-image.png" alt=""/>
                 <span>GREENY</span>proizvodnja i čuvanje voća</h1>

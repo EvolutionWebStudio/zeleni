@@ -206,6 +206,7 @@ nav ul {
 /* MAIN MENU */
 
 .main-menu {
+    position: static!important;
 }
 .main-menu ul {
     margin: 0;
@@ -215,7 +216,6 @@ nav ul {
         display: inline-block;
         text-align: center;
         position: static;
-
     }
     .main-menu > ul > li > a {
         display: block;
@@ -234,6 +234,7 @@ nav ul {
         position: absolute;
         left: 0;
         top: 95px;
+        padding: .5rem 0;
         background: #fff;
         z-index: 5;
         text-align: center;
@@ -249,7 +250,7 @@ nav ul {
     }
         .main-menu .submenu li a {
             display: inline-block;
-            padding: 1rem;
+            padding: .3rem 1rem;
             text-align: center;
             color: #444;
             text-transform: uppercase;
