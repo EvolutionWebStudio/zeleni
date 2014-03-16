@@ -33,5 +33,9 @@
 	<?php echo CHtml::encode($data->type); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('color')); ?>:</b>
+	<?php echo CHtml::encode($data->color); ?>
+	<br />
+
 
 </div>
