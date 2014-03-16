@@ -1,9 +1,10 @@
 <div class="category-header">
-    <div class="bar green">
+
+    <div class="bar" style="background-color: #<?php echo ($category->color)? $category->color : '005C34' ?>">
         <div class="clearfix main-banner">
             <div class="clearfix banner-line top"></div>
             <div class="logo-image"></div>
-            <ul class="bxslider">
+            <ul class="article-slider">
                 <?php foreach($category->images as $image): ?>
                     <li class="clearfix">
 

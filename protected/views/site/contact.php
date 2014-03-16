@@ -66,72 +66,61 @@
 									),
 								)); ?>
 
-								<p class="note">Fields with <span class="required">*</span> are required.</p>
+
 
 								<?php echo $form->errorSummary($model); ?>
 
-								<div class="columns large-12">
-									<div class="large-2 columns push-1 text-right">
+
+									<div class="large-3 columns text-right">
 										<?php echo $form->labelEx($model,'name'); ?>
 									</div>
-									<div class="large-8 columns pull-1">
+									<div class="large-9 columns">
 										<?php echo $form->textField($model,'name',array('class'=>'large-4 columns')); ?>
 										<?php echo $form->error($model,'name'); ?>
 									</div>
 
-								</div>
-
-								<div class="columns large-12">
-									<div class="large-2 columns push-1 text-right">
+									<div class="large-3 columns text-right">
 										<?php echo $form->labelEx($model,'company'); ?>
 									</div>
-									<div class="large-8 columns pull-1">
+									<div class="large-9 columns">
 										<?php echo $form->textField($model,'company',array('size'=>60,'maxlength'=>128)); ?>
 										<?php echo $form->error($model,'company'); ?>
 									</div>
-								</div>
 
-								<div class="columns large-12">
-									<div class="large-2 columns push-1 text-right">
+									<div class="large-3 columns text-right">
 										<?php echo $form->labelEx($model,'email'); ?>
 									</div>
-									<div class="large-8 columns pull-1">
+									<div class="large-9 columns">
 										<?php echo $form->textField($model,'email'); ?>
 										<?php echo $form->error($model,'email'); ?>
 									</div>
-								</div>
 
-								<div class="columns large-12">
-									<div class="large-2 columns push-1 text-right">
+									<div class="large-3 columns text-right">
 										<?php echo $form->labelEx($model,'webSite'); ?>
 									</div>
-									<div class="large-8 columns pull-1">
+									<div class="large-9 columns">
 										<?php echo $form->textField($model,'webSite',array('size'=>60,'maxlength'=>128)); ?>
 										<?php echo $form->error($model,'webSite'); ?>
 									</div>
-								</div>
 
-								<div class="columns large-12">
-									<div class="large-2 columns push-1 text-right">
+									<div class="large-3 columns text-right">
 										<?php echo $form->labelEx($model,'phone'); ?>
 									</div>
-									<div class="large-8 columns pull-1">
+									<div class="large-9 columns">
 										<?php echo $form->textField($model,'phone',array('size'=>60,'maxlength'=>128)); ?>
 										<?php echo $form->error($model,'phone'); ?>
 									</div>
-								</div>
 
-								<div class="columns large-12">
-									<div class="large-2 columns push-1 text-right">
+									<div class="large-3 columns text-right">
 										<?php echo $form->labelEx($model,'body'); ?>
 									</div>
-									<div class="large-8 columns pull-1">
+									<div class="large-9 columns">
 										<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
 										<?php echo $form->error($model,'body'); ?>
 									</div>
-								</div>
 
-								<div class="row buttons">
+
+								<div class="buttons large-9 columns push-3">
 									<?php echo CHtml::submitButton('Submit'); ?>
 								</div>
 

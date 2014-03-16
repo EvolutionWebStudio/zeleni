@@ -30,12 +30,12 @@
         <nav class="info-menu">
             <div class="row collapse wide">
 	            <?php $this->widget('zii.widgets.CMenu', Menu::getTopMenu()); ?>
-                <ul class="large-5 columns text-right">
+                <ul class="large-6 columns text-right">
                     <li>T:+381 34 6709-141</li>
                     <li>F:+381 34 6709-230</li>
                     <li>e-mail: greeny@vozd.net</li>
                 </ul>
-                <ul class="large-2 columns language-select">
+                <ul class="large-1 columns language-select">
                     <li><a href="#" class="flag serbia" ></a></li>
                     <li><a href="#" class="flag russia" ></a></li>
                     <li><a href="#" class="flag unitedkingdom" ></a></li>
@@ -72,36 +72,11 @@
     </div>
 
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/foundation.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bxslider/jquery.bxslider.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/main.js"></script>
-
-    <script>
-        $(document).foundation();
-
-        $(document).ready(function(){
-            $('.bxslider').bxSlider({
-                controls: false,
-                auto: true
-
-            });
-            $('.gallery-bxslider').bxSlider({
-                captions: true,
-                pager: false
-            });
-            $('.albums-bxslider').bxSlider({
-                minSlides: 5,
-                maxSlides: 5,
-                slideWidth: 254,
-                slideMargin: 0,
-                nextSelector: '.albums-navigation .albums-next',
-                prevSelector: '.albums-navigation .albums-prev',
-                nextText: '',
-                prevText: ''
-            });
-        });
-    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

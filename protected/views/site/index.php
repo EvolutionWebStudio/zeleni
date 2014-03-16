@@ -5,13 +5,13 @@ $this->pageTitle=Yii::app()->name;
 ?>
 
 <div class="slider">
-    <div class="bar green">
+    <div class="bar slider-bar">
         <div class="clearfix main-banner">
             <div class="clearfix banner-line top"></div>
             <div class="logo-image"></div>
-                <ul class="bxslider">
+                <ul class="main-slider">
                     <?php foreach($slides as $slide): ?>
-                        <li class="clearfix">
+                        <li class="clearfix" data-color="#<?php echo ($slide->color)? $slide->color : '005C34' ?>">
                             <div class="caption-wrapper">
                                 <article>
                                     <?php echo $slide->content; ?>
