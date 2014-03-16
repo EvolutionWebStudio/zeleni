@@ -75,6 +75,9 @@ class SiteController extends Controller
 		    'alias' => $subCategory,
 		    'lang' => $this->lang,
 	    ));
+	    $promo = Promo::model()->findByAttributes(array(
+		    'lang' => $this->lang,
+	    ));
 
         if($category){
 	        if($subCategory){
@@ -86,6 +89,7 @@ class SiteController extends Controller
 			        'category'=>$subCategory,
 			        'post'=>$post,
 			        'subCategories'=>null,
+			        'promo'=>$promo,
 		        ));
 	        }
 	        else {
@@ -101,6 +105,7 @@ class SiteController extends Controller
 			        'category'=>$category,
 			        'post'=>$post,
 			        'subCategories'=>$subCategories,
+			        'promo' => $promo,
 		        ));
 	        }
 

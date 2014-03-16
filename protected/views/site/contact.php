@@ -1,31 +1,31 @@
-<?php
-/* @var $this SiteController */
-/* @var $model ContactForm */
-/* @var $form CActiveForm */
+<div class="category-header">
+	<div class="bar green">
+		<div class="clearfix main-banner">
+			<div class="clearfix banner-line top"></div>
+			<div class="logo-image"></div>
+			<ul class="bxslider">
+				<?php foreach($category->images as $image): ?>
+					<li class="clearfix">
 
-$this->pageTitle='';
-?>
-	<div class="category-header">
-		<div class="bar green">
-			<div class="row collapse wide main-banner">
-				<div class="clearfix banner-line top"></div>
-				<div class="logo-image"></div>
-
-				<div class="caption-wrapper columns">
-					<article>
-						<hgroup>
-							<h1><?php echo $category->content; ?></h1>
-						</hgroup>
-					</article>
-				</div>
-
-				<div class="image-wrapper wider-image columns">
-					<img src="<?php echo Yii::app()->request->baseUrl . '/img/articles/' . $category->images[0]->name; ?>" alt="Clanak placeholder" class="clanak-placeholder"/>
-				</div>
-				<div class="clearfix banner-line bottom"></div>
-			</div>
+						<div class="caption-wrapper">
+							<article>
+								<hgroup>
+									<h1><?php echo $category->content; ?></h1>
+								</hgroup>
+							</article>
+						</div>
+						<div class="image-wrapper wider-image">
+							<img src="<?php echo Yii::app()->request->baseUrl . '/img/articles/' . $image->name; ?>" alt="Clanak placeholder" class="clanak-placeholder"/>
+						</div>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+			<div class="clearfix banner-line bottom"></div>
 		</div>
 	</div>
+</div>
+
+<div class="main-wrapper row collapse wide">
 
 	<div class="main-wrapper row collapse wide">
 		<aside class="main-sidebar columns">
@@ -53,7 +53,7 @@ $this->pageTitle='';
 						<?php else: ?>
 
 
-							<div class="form">
+							<div class="form clearfix">
 
 								<?php $form=$this->beginWidget('CActiveForm', array(
 									'id'=>'contact-form',
@@ -61,46 +61,74 @@ $this->pageTitle='';
 									'clientOptions'=>array(
 										'validateOnSubmit'=>true,
 									),
+									'htmlOptions'=>array(
+										'class'=>'large-12 columns',
+									),
 								)); ?>
 
 								<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 								<?php echo $form->errorSummary($model); ?>
 
-								<div class="row">
-									<?php echo $form->labelEx($model,'name'); ?>
-									<?php echo $form->textField($model,'name'); ?>
-									<?php echo $form->error($model,'name'); ?>
+								<div class="columns large-12">
+									<div class="large-2 columns push-1 text-right">
+										<?php echo $form->labelEx($model,'name'); ?>
+									</div>
+									<div class="large-8 columns pull-1">
+										<?php echo $form->textField($model,'name',array('class'=>'large-4 columns')); ?>
+										<?php echo $form->error($model,'name'); ?>
+									</div>
+
 								</div>
 
-								<div class="row">
-									<?php echo $form->labelEx($model,'company'); ?>
-									<?php echo $form->textField($model,'company',array('size'=>60,'maxlength'=>128)); ?>
-									<?php echo $form->error($model,'company'); ?>
+								<div class="columns large-12">
+									<div class="large-2 columns push-1 text-right">
+										<?php echo $form->labelEx($model,'company'); ?>
+									</div>
+									<div class="large-8 columns pull-1">
+										<?php echo $form->textField($model,'company',array('size'=>60,'maxlength'=>128)); ?>
+										<?php echo $form->error($model,'company'); ?>
+									</div>
 								</div>
 
-								<div class="row">
-									<?php echo $form->labelEx($model,'email'); ?>
-									<?php echo $form->textField($model,'email'); ?>
-									<?php echo $form->error($model,'email'); ?>
+								<div class="columns large-12">
+									<div class="large-2 columns push-1 text-right">
+										<?php echo $form->labelEx($model,'email'); ?>
+									</div>
+									<div class="large-8 columns pull-1">
+										<?php echo $form->textField($model,'email'); ?>
+										<?php echo $form->error($model,'email'); ?>
+									</div>
 								</div>
 
-								<div class="row">
-									<?php echo $form->labelEx($model,'webSite'); ?>
-									<?php echo $form->textField($model,'webSite',array('size'=>60,'maxlength'=>128)); ?>
-									<?php echo $form->error($model,'webSite'); ?>
+								<div class="columns large-12">
+									<div class="large-2 columns push-1 text-right">
+										<?php echo $form->labelEx($model,'webSite'); ?>
+									</div>
+									<div class="large-8 columns pull-1">
+										<?php echo $form->textField($model,'webSite',array('size'=>60,'maxlength'=>128)); ?>
+										<?php echo $form->error($model,'webSite'); ?>
+									</div>
 								</div>
 
-								<div class="row">
-									<?php echo $form->labelEx($model,'phone'); ?>
-									<?php echo $form->textField($model,'phone',array('size'=>60,'maxlength'=>128)); ?>
-									<?php echo $form->error($model,'phone'); ?>
+								<div class="columns large-12">
+									<div class="large-2 columns push-1 text-right">
+										<?php echo $form->labelEx($model,'phone'); ?>
+									</div>
+									<div class="large-8 columns pull-1">
+										<?php echo $form->textField($model,'phone',array('size'=>60,'maxlength'=>128)); ?>
+										<?php echo $form->error($model,'phone'); ?>
+									</div>
 								</div>
 
-								<div class="row">
-									<?php echo $form->labelEx($model,'body'); ?>
-									<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
-									<?php echo $form->error($model,'body'); ?>
+								<div class="columns large-12">
+									<div class="large-2 columns push-1 text-right">
+										<?php echo $form->labelEx($model,'body'); ?>
+									</div>
+									<div class="large-8 columns pull-1">
+										<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
+										<?php echo $form->error($model,'body'); ?>
+									</div>
 								</div>
 
 								<div class="row buttons">
