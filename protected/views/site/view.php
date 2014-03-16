@@ -3,16 +3,6 @@
         <div class="clearfix main-banner">
             <div class="clearfix banner-line top"></div>
             <div class="logo-image"></div>
-
-<<<<<<< HEAD
-            <div class="caption-wrapper columns">
-                <article>
-                    <hgroup>
-                        <?php echo $category->content; ?>
-                    </hgroup>
-                </article>
-            </div>
-=======
             <ul class="bxslider">
                 <?php foreach($category->images as $image): ?>
                     <li class="clearfix">
@@ -30,8 +20,6 @@
                     </li>
                 <?php endforeach; ?>
             </ul>
->>>>>>> 91c4dddc2525c9e9d31c7dc4ad123afbb2efbb4b
-
             <div class="clearfix banner-line bottom"></div>
         </div>
     </div>
