@@ -6,35 +6,37 @@ $this->pageTitle=Yii::app()->name;
 
 <div class="slider">
     <div class="bar green">
-        <div class="row collapse wide main-banner">
+        <div class="clearfix main-banner">
             <div class="clearfix banner-line top"></div>
             <div class="logo-image"></div>
+                <ul class="bxslider">
+                    <?php foreach($slides as $slide): ?>
+                        <li class="clearfix">
+                            <div class="caption-wrapper">
+                                <article>
+                                    <?php echo $slide->content; ?>
+                                </article>
+                            </div>
 
-            <?php foreach($slides as $slide): ?>
-                <div>
-                    <div class="caption-wrapper columns">
-                        <article>
-                            <?php echo $slide->content; ?>
-                        </article>
-                    </div>
-
-                    <div class="image-wrapper wider-image columns">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/slider/<?php echo $slide->image;?>" alt="Greeny tresnja"/>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-
+                            <div class="image-wrapper wider-image">
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/slider/<?php echo $slide->image;?>" alt="Greeny tresnja"/>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             <div class="clearfix banner-line bottom"></div>
         </div>
-
     </div>
 
     <div class="bar gray">
         <div class="row wide">
             <nav class="slider-menu">
-                <ul class="clearfix">
-                    <?php foreach($slides as $slide): ?>
-                        <li class="large-2 columns"><a href="<?php echo $slide->link; ?>"><span class="slide-number">0<?php echo $slide->number; ?></span> <?php echo $slide->title; ?> <span class="link-arrow">&gt;</span></a></li>
+                <ul class="clearfix" id="bx-pager">
+                    <?php  $i = 0;
+                    foreach($slides as $slide): ?>
+                        <li class="large-2 columns">
+                            <a href="" data-slide-index="<?php echo $i++; ?>"><span class="slide-number">0<?php echo $slide->number; ?></span> <?php echo $slide->title; ?> <span class="link-arrow">&gt;</span></a>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </nav>
@@ -80,19 +82,6 @@ $this->pageTitle=Yii::app()->name;
         </div>
     </div>
 
-    <div class="row wide promo-sok">
-        <div class="large-4 columns">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/<?php echo $promo->image1; ?>" alt="" class="sok-logo"/>
-            &nbsp;
-        </div>
-        <div class="large-4 columns">
-            <article>
-	            <?php echo $promo->content; ?>
-            </article>
-        </div>
-        <div class="large-4 columns">
-            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/<?php echo $promo->image2; ?>" alt=""/>
-        </div>
-    </div>
-
+    <?php $this->renderPartial('_promo-banner', array('promo' => $promo)); ?>
 </div>
+

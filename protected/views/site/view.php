@@ -1,9 +1,10 @@
 <div class="category-header">
     <div class="bar green">
-        <div class="row collapse wide main-banner">
+        <div class="clearfix main-banner">
             <div class="clearfix banner-line top"></div>
             <div class="logo-image"></div>
 
+<<<<<<< HEAD
             <div class="caption-wrapper columns">
                 <article>
                     <hgroup>
@@ -11,10 +12,26 @@
                     </hgroup>
                 </article>
             </div>
+=======
+            <ul class="bxslider">
+                <?php foreach($category->images as $image): ?>
+                    <li class="clearfix">
 
-            <div class="image-wrapper wider-image columns">
-                <img src="<?php echo Yii::app()->request->baseUrl . '/img/articles/' . $category->images[0]->name; ?>" alt="Clanak placeholder" class="clanak-placeholder"/>
-            </div>
+                        <div class="caption-wrapper">
+                            <article>
+                                <hgroup>
+                                    <h1><?php echo $category->content; ?></h1>
+                                </hgroup>
+                            </article>
+                        </div>
+                        <div class="image-wrapper wider-image">
+                            <img src="<?php echo Yii::app()->request->baseUrl . '/img/articles/' . $image->name; ?>" alt="Clanak placeholder" class="clanak-placeholder"/>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+>>>>>>> 91c4dddc2525c9e9d31c7dc4ad123afbb2efbb4b
+
             <div class="clearfix banner-line bottom"></div>
         </div>
     </div>

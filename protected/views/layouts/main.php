@@ -16,6 +16,7 @@
 
         <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/normalize.css" />
         <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/foundation.css" />
+        <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/bxslider/jquery.bxslider.css" />
         <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/vendor/modernizr.js"></script>
     </head>
@@ -29,10 +30,15 @@
         <nav class="info-menu">
             <div class="row collapse wide">
 	            <?php $this->widget('zii.widgets.CMenu', Menu::getTopMenu()); ?>
-                <ul class="large-6 columns text-right">
+                <ul class="large-5 columns text-right">
                     <li>T:+381 34 6709-141</li>
                     <li>F:+381 34 6709-230</li>
                     <li>e-mail: greeny@vozd.net</li>
+                </ul>
+                <ul class="large-2 columns language-select">
+                    <li><a href="#" class="flag serbia" ></a></li>
+                    <li><a href="#" class="flag russia" ></a></li>
+                    <li><a href="#" class="flag unitedkingdom" ></a></li>
                 </ul>
             </div>
         </nav>
@@ -68,10 +74,20 @@
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/foundation.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/plugins.js"></script>
+    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bxslider/jquery.bxslider.min.js"></script>
     <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/main.js"></script>
 
     <script>
         $(document).foundation();
+
+        $(document).ready(function(){
+            $('.bxslider').bxSlider({
+                pagerCustom: '#bx-pager',
+                controls: false,
+                auto: true
+
+            });
+        });
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
