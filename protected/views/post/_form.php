@@ -27,7 +27,17 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'content'); ?>
-		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->widget('application.extensions.ckeditor.CKEditor', array(
+			'model' => $model,
+			'attribute' => 'content',
+			'editorTemplate'=>'full',
+			'htmlOptions'=>array('id'=>'content'),
+			'options' => array(
+				'allowedContent'=>true,
+				'contentsCss' => array(
+				),
+			),
+		)); ?>
 		<?php echo $form->error($model,'content'); ?>
 	</div>
 

@@ -149,18 +149,20 @@ class Menu extends CActiveRecord
 		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>''),'activeCssClass'=>'active', 'activateItems' => true);
 		return $menu;
 	}
-	public static function getSubMenu($id,$alias){
+	public static function getSubMenu($id,$link){
 		$criteria=new CDbCriteria;
 		$criteria->condition = "parent_item = $id AND lang = '" . Menu::getLang() . "'";
 		$criteria->order = "'order'";
 		$subMenu = Menu::model()->findAll($criteria);
-		if($subMenu)
+		if($subMenu){
 			foreach ($subMenu as $row){
-				if($row['category']->type == Category::TYPE_SELF_LINK)
+				$alias = ($row['category']->parent_id)? Category::model()->findByPk($row['category']->parent_id)->alias : $link;
+				if($row['category']->type == Category::TYPE_SELF_LINK) {
 					$data[] = array('label' => $row['item'], 'url' => array('/' . $alias.'#'.$row['category']->alias));
+				}
 				else
 					$data[] = array('label' => $row['item'], 'url' => array($alias.'/'.$row['category']->alias));
-			}
+			}}
 		else
 			$data = array();
 		return $data;

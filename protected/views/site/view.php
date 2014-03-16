@@ -7,7 +7,7 @@
             <div class="caption-wrapper columns">
                 <article>
                     <hgroup>
-                        <h1><?php echo $category->content; ?></h1>
+                        <?php echo $category->content; ?>
                     </hgroup>
                 </article>
             </div>
@@ -55,6 +55,7 @@
                 <?php if($subCategories): ?>
                     <?php foreach($subCategories as $posts): ?>
                         <?php foreach($posts->posts as $p): ?>
+			                <?php if($posts->type == Category::TYPE_SELF_LINK): ?>
                             <article>
                                 <a name=<?php echo $posts->alias; ?>></a>
                                 <h2><?php echo $p->title; ?></h2>
@@ -63,6 +64,7 @@
                                     <a href="<?php echo $p->link; ?>" class="article-link"><?php echo $p->link_text; ?> ></a>
                                 <?php endif; ?>
                             </article>
+				            <?php endif; ?>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
                 <?php endif; ?>
