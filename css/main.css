@@ -234,9 +234,9 @@ nav ul {
         position: absolute;
         left: 0;
         top: 95px;
-        padding: .5rem 0;
+        padding: .5rem 5rem;
         background: #fff;
-        z-index: 5;
+        z-index: 9999;
         text-align: center;
         border-top: 2px solid #f37021;
     }
@@ -281,38 +281,40 @@ nav ul {
         z-index: 999;
     }
     .main-banner .caption-wrapper {
-        min-width: 244px;
+        min-width: 250px;
         float: left;
-        width: 19%;
-        padding-left: 50px;
+        width: 22%;
+        padding-left: 20px;
     }
         .main-banner .caption-wrapper article {
             padding: 80px 10px 0;
             color: #fff;
-            font-size: 14px;
-            line-height: 15px;
         }
         .main-banner .caption-wrapper hgroup {
-            margin-bottom: 20px;
+            margin-bottom: .5rem;
         }
         .main-banner .caption-wrapper h1 {
             margin: 0;
             color: #fff;
-            font-size: 48px;
-            line-height: 48px;
+            font-size: 3rem;
+            line-height: 3.2rem;
         }
         .main-banner .caption-wrapper h2 {
             margin: 0;
             color: #fff;
-            font-size: 24px;
-            line-height: 28px;
+            font-size: 1.2rem;
+        }
+        .main-banner .caption-wrapper p {
+            margin-bottom: 0;
+            font-size: .95rem;
+            line-height: 1.1rem;
         }
     .main-banner .image-wrapper {
         float: right;
-        width: 80%;
+        width: 75%;
         text-align: right;
-        min-width: 975px;
-        margin-right: -20px;
+        /*min-width: 975px;*/
+        margin-right: 20px;
     }
         .main-banner .image-wrapper img {
             width: 100%;
