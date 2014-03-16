@@ -130,6 +130,7 @@ class SiteController extends Controller
 		$this->render('galerija',array(
 			'albums' => $albums,
 			'images' => $images,
+			'active' => $album->alias,
 		));
 	}
 

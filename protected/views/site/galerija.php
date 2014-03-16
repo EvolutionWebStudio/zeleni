@@ -19,7 +19,7 @@
         <ul class="clearfix albums-bxslider">
             <?php foreach($albums as $album): ?>
                 <li>
-                    <a href="<?php echo Yii::app()->request->baseUrl . '/galerija-slika/'.$album->alias; ?>">
+                    <a href="<?php echo Yii::app()->request->baseUrl . '/galerija-slika/'.$album->alias; ?>" class="<?php echo($album->alias==$active)? 'active' : '';?>">
                         <img src="<?php echo Yii::app()->request->baseUrl . '/img/gallery/albums/' . $album->image; ?>" alt="<?php echo $album->name; ?>" title="<?php echo $album->name; ?>"/>
                     <span class="thumb-overlay"></span>
                         <span class="album-name"><?php echo $album->name; ?></span>
