@@ -93,7 +93,7 @@
             $('.albums-bxslider').bxSlider({
                 minSlides: 5,
                 maxSlides: 5,
-                slideWidth: 245,
+                slideWidth: 254,
                 slideMargin: 0,
                 nextSelector: '.albums-navigation .albums-next',
                 prevSelector: '.albums-navigation .albums-prev',
