@@ -87,6 +87,21 @@
                 auto: true
 
             });
+            $('.gallery-bxslider').bxSlider({
+                pagerCustom: '.albums-bxslider',
+                captions: true
+            });
+            $('.albums-bxslider').bxSlider({
+                minSlides: 5,
+                maxSlides: 5,
+                slideWidth: 245,
+                slideMargin: 0,
+                nextSelector: '.albums-navigation .albums-next',
+                prevSelector: '.albums-navigation .albums-prev',
+                nextText: '',
+                prevText: '',
+                captions: true
+            });
         });
     </script>
 
