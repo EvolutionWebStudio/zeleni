@@ -45,7 +45,7 @@
     </div>
 
     <header class="main-header">
-        <div class="row collapse wide">
+        <div class="row collapse wide relative">
             <h1 class="logo large-4 columns clearfix">
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-logo-image.png" alt=""/>
                 <span>GREENY</span>proizvodnja i čuvanje voća</h1>
@@ -82,13 +82,13 @@
 
         $(document).ready(function(){
             $('.bxslider').bxSlider({
-                pagerCustom: '#bx-pager',
                 controls: false,
                 auto: true
 
             });
             $('.gallery-bxslider').bxSlider({
-                captions: true
+                captions: true,
+                pager: false
             });
             $('.albums-bxslider').bxSlider({
                 minSlides: 5,
@@ -98,8 +98,7 @@
                 nextSelector: '.albums-navigation .albums-next',
                 prevSelector: '.albums-navigation .albums-prev',
                 nextText: '',
-                prevText: '',
-                captions: true
+                prevText: ''
             });
         });
     </script>

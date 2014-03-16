@@ -127,7 +127,7 @@
     position: absolute;
     top: 50%;
     width: 100%;
-    margin-top: -16px;
+    margin-top: -36px;
     z-index: 2;
 }
 .albums-navigation a {
@@ -139,4 +139,7 @@
 }
 .albums-navigation a.disabled {
     display: none;
+}
+.gallery-albums .bx-caption {
+    bottom: -30px;
 }
