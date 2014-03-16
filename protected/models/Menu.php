@@ -130,7 +130,7 @@ class Menu extends CActiveRecord
 		foreach ($menu as $row) {
 				$categories[] = array('label' => $row['item'], 'url' => array('/'.$row['category']->alias), 'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false);
 		}
-		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>'large-6 columns text-left'), 'activateItems' => true);
+		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>'large-5 columns text-left'), 'activateItems' => true);
 		return $menu;
 	}
 
@@ -157,9 +157,9 @@ class Menu extends CActiveRecord
 		if($subMenu)
 			foreach ($subMenu as $row){
 				if($row['category']->type == Category::TYPE_SELF_LINK)
-					$data[] = array('label' => $row['item'], 'url' => array('/' . $alias.'#'.$row['category']->alias));
+					$data[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'large-2 columns'), 'url' => array('/' . $alias.'#'.$row['category']->alias));
 				else
-					$data[] = array('label' => $row['item'], 'url' => array($alias.'/'.$row['category']->alias));
+					$data[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'large-2 columns'), 'url' => array($alias.'/'.$row['category']->alias));
 			}
 		else
 			$data = array();
