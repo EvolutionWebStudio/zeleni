@@ -50,8 +50,6 @@
                     </article>
 
                     <?php
-                        if($category->alias == 'kontaktirajte-nas')
-                            $this->renderPartial('_contact_form');
                         if($category->alias == 'lokacija')
                             $this->renderPartial('_location_map');
                     ?>
@@ -77,3 +75,4 @@
         </section>
     </div>
 </div>
+<?php $this->renderPartial('_promo-banner', array('promo' => $promo)); ?>
