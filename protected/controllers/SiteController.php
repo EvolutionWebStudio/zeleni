@@ -44,11 +44,16 @@ class SiteController extends Controller
 		$banners = Banner::model()->findAllByAttributes(array(
 			'lang' => $this->lang,
 		));
+		$posts = Post::model()->findAllByAttributes(array(
+			'lang' => $this->lang,
+			'category_id' => Category::model()->findByAttributes(array('alias'=>'pocetna'))->id,
+		));
 
         $this->render('index',array(
             'slides'=>$slides,
 	        'promo'=>$promo,
 	        'banners'=>$banners,
+	        'posts'=>$posts,
         ));
 	}
 
@@ -111,6 +116,9 @@ class SiteController extends Controller
 	public function actionGalerija_slika() {
 		$this->getLang();
 		$albumAlias = (isset($_GET['album']))? $_GET['album'] : 'kompanija';
+		$promo = Promo::model()->findByAttributes(array(
+			'lang' => $this->lang,
+		));
 		$albums = Album::model()->findAllByAttributes(array(
 			'lang' => $this->lang,
 		));
@@ -131,6 +139,7 @@ class SiteController extends Controller
 			'albums' => $albums,
 			'images' => $images,
 			'active' => $album->alias,
+			'promo' => $promo,
 		));
 	}
 

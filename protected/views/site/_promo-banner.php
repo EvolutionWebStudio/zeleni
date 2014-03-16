@@ -1,6 +1,6 @@
 <div class="row wide promo-sok">
     <div class="large-4 columns">
-        <a href="#">
+        <a href="/everyday-sok">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/<?php echo $promo->image1; ?>" alt="" class="sok-logo"/>
         </a>
         &nbsp;

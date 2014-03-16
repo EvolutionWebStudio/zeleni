@@ -35,7 +35,7 @@ $this->pageTitle=Yii::app()->name;
                     <?php  $i = 0;
                     foreach($slides as $slide): ?>
                         <li class="large-2 columns">
-                            <a href="" data-slide-index="<?php echo $i++; ?>"><span class="slide-number">0<?php echo $slide->number; ?></span> <?php echo $slide->title; ?> <span class="link-arrow">&gt;</span></a>
+                            <a href="<?php echo Yii::app()->request->baseUrl . '/'.$slide->link; ?>" data-slide-index="<?php echo $i++; ?>"><span class="slide-number">0<?php echo $slide->number; ?></span> <?php echo $slide->title; ?> <span class="link-arrow">&gt;</span></a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
@@ -51,19 +51,13 @@ $this->pageTitle=Yii::app()->name;
             &nbsp;
         </div>
         <div class="large-4 columns">
-            <p>
-                Naš voćnjak se nalazi u selu Kopljari nedaleko od Aranđelovca i oko 50 km jugozapadno od Beograda.
-                Naša osnovna delatnost je gajenje i čuvanje jabuka.
-            </p>
+			<?php echo $posts[0]->content; ?>
         </div>
         <div class="large-3 columns">
-            <p>
-                Trenutno gajimo ukupno 85.000 stabala jabuke sledećih sorti: zlatni delišes, red čif, jonagold,
-                greni smit, gala i fudži.
-            </p>
+	        <?php echo $posts[1]->content; ?>
         </div>
         <div class="large-2 columns text-center">
-            <a class="button small" href="#">Galerija slika</a>
+            <a class="button small" href="/galerija-slika">Galerija slika</a>
         </div>
     </div>
     
