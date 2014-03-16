@@ -22,8 +22,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'folder'); ?>
-		<?php echo $form->textField($model,'folder',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->label($model,'alias'); ?>
+		<?php echo $form->textField($model,'alias',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row">

@@ -110,8 +110,26 @@ class SiteController extends Controller
 
 	public function actionGalerija_slika() {
 		$this->getLang();
+		$albumAlias = (isset($_GET['album']))? $_GET['album'] : 'kompanija';
+		$albums = Album::model()->findAllByAttributes(array(
+			'lang' => $this->lang,
+		));
+		$album = Album::model()->findByAttributes(array(
+			'lang' => $this->lang,
+			'alias' => $albumAlias,
+		));
+		if(!$album){
+			$album = Album::model()->findByAttributes(array(
+				'lang' => $this->lang,
+				'alias' => 'kompanija',
+			));
+		}
+		$images = Image::model()->findAllByAttributes(array(
+			'album_id' => $album->id,
+		));
 		$this->render('galerija',array(
-
+			'albums' => $albums,
+			'images' => $images,
 		));
 	}
 

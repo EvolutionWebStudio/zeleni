@@ -26,9 +26,21 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'folder'); ?>
-		<?php echo $form->textField($model,'folder',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'folder'); ?>
+		<?php echo $form->labelEx($model,'alias'); ?>
+		<?php echo $form->textField($model,'alias',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'alias'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'lang'); ?>
+		<?php echo $form->textField($model,'lang',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'lang'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'image'); ?>
+		<?php echo $form->textField($model,'image'); ?>
+		<?php echo $form->error($model,'image'); ?>
 	</div>
 
 	<div class="row">

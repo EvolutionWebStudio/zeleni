@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
-		<?php echo $form->textField($model,'title',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'title',array('size'=>75,'maxlength'=>255)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
@@ -33,7 +33,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'album_id'); ?>
-		<?php echo $form->textField($model,'album_id'); ?>
+		<?php
+		$album_list = CHtml::listData(Album::model()->findAll(), 'id', 'name');
+		$options = array(
+			'tabindex' => '0',
+			'empty' => '(not set)',
+		);
+		?>
+		<?php echo $form->dropDownList($model,'album_id', $album_list, $options); ?>
 		<?php echo $form->error($model,'album_id'); ?>
 	</div>
 

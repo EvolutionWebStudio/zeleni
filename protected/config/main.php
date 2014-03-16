@@ -45,7 +45,7 @@ return array(
                 '<controller:(category|slider|banner|album|image|post|promo|menu|categoryimage)>/<action:\w+>'=>'<controller>/<action>',
 				'login' => 'site/login',
 				'logout' => 'site/logout',
-				'galerija-slika' => 'site/galerija_slika',
+				'galerija-slika/<album:[0-9a-zA-Z_\-]+>/*' => 'site/galerija_slika/',
 				'kontaktirajte-nas' => 'site/contact',
                 '<category:[0-9a-zA-Z_\-]+>/<subcategory:[0-9a-zA-Z_\-]+>/*'=>'/site/view/',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',

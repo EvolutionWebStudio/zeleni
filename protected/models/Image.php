@@ -34,8 +34,8 @@ class Image extends CActiveRecord
 		return array(
 			array('album_id', 'required'),
 			array('album_id, number', 'numerical', 'integerOnly'=>true),
-			array('title, link', 'length', 'max'=>45),
-			array('caption', 'length', 'max'=>255),
+			array('link', 'length', 'max'=>45),
+			array('caption, title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, link, album_id, caption, number', 'safe', 'on'=>'search'),

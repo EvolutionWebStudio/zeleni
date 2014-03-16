@@ -1,3 +1,12 @@
+<?php foreach($albums as $album): ?>
+	<?php echo $album->name; ?>
+	<?php echo $album->alias; ?>
+	<?php echo $album->image; ?>
+<?php endforeach; ?>
+<?php foreach($images as $image): ?>
+	<?php echo $image->title; ?>
+	<?php echo $image->caption; ?>
+<?php endforeach; ?>
 <div class="bar green">
     <div class="row collapse wide main-gallery">
         <div class="clearfix banner-line top"></div>

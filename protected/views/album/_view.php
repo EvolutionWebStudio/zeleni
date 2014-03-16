@@ -13,8 +13,8 @@
 	<?php echo CHtml::encode($data->name); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('folder')); ?>:</b>
-	<?php echo CHtml::encode($data->folder); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('alias')); ?>:</b>
+	<?php echo CHtml::encode($data->alias); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('number')); ?>:</b>

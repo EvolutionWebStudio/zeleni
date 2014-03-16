@@ -6,7 +6,9 @@
  * The followings are the available columns in table 'album':
  * @property integer $id
  * @property string $name
- * @property string $folder
+ * @property string $alias
+ * @property string $lang
+ * @property string $image
  * @property integer $number
  *
  * The followings are the available model relations:
@@ -31,10 +33,11 @@ class Album extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('number', 'numerical', 'integerOnly'=>true),
-			array('name, folder', 'length', 'max'=>45),
+			array('name, alias, lang', 'length', 'max'=>45),
+			array('image', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, folder, number', 'safe', 'on'=>'search'),
+			array('id, name, alias, number', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,8 +61,10 @@ class Album extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
-			'folder' => 'Folder',
+			'alias' => 'alias',
 			'number' => 'Number',
+			'lang' => 'lang',
+			'image' => 'image',
 		);
 	}
 
@@ -83,8 +88,10 @@ class Album extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('folder',$this->folder,true);
+		$criteria->compare('alias',$this->alias,true);
 		$criteria->compare('number',$this->number);
+		$criteria->compare('lang',$this->lang);
+		$criteria->compare('image',$this->image);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
