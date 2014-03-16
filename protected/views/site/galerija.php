@@ -14,7 +14,7 @@
     </div>
 </div>
 
-<div class="bar gray">
+<div class="bar gray albums-bar">
     <div class="row collapse wide gallery-albums">
         <ul class="clearfix albums-bxslider">
             <?php foreach($albums as $album): ?>
@@ -22,7 +22,7 @@
                     <a href="<?php echo Yii::app()->request->baseUrl . '/galerija-slika/'.$album->alias; ?>" class="<?php echo($album->alias==$active)? 'active' : '';?>">
                         <img src="<?php echo Yii::app()->request->baseUrl . '/img/gallery/albums/' . $album->image; ?>" alt="<?php echo $album->name; ?>" title="<?php echo $album->name; ?>"/>
                     <span class="thumb-overlay"></span>
-                        <span class="album-name"><?php echo $album->name; ?></span>
+                        <p class="album-name"><?php echo $album->name; ?></p>
                     </a>
                 </li>
             <?php endforeach; ?>
@@ -35,4 +35,6 @@
     </div>
 </div>
 
-<?php //$this->renderPartial('_promo-banner', array('promo' => $promo)); ?>
+<?php $this->renderPartial('_promo-banner', array('promo' => $promo)); ?>
+
+<?php //Yii::app()->clientScript->registerScript("$('.gallery-bxslider').bxSlider({captions: true});", CClientScript::POS_READY);?>

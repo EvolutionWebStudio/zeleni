@@ -604,14 +604,14 @@ nav ul {
             display: inline-block;
             float: left;
             width: 244px;
-            height: 245px;
+            height: 285px;
         }
             .gallery-albums a .thumb-overlay {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 100%;
+                width: 244px;
+                height: 245px;
                 background: rgba(0, 92, 52, .6);
             }
                 .gallery-albums a:hover .thumb-overlay,
@@ -620,12 +620,16 @@ nav ul {
                 }
             .gallery-albums .album-name {
                 position: absolute;
-                bottom: -40px;
+                bottom: -10px;
                 width: 100%;
                 text-align: center;
                 text-transform: uppercase;
                 color: #444;
             }
+.albums-bar {
+    max-height: 245px;
+    margin-bottom: 100px;
+}
 
 
 /* FOOTER */
