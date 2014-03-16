@@ -88,7 +88,6 @@
 
             });
             $('.gallery-bxslider').bxSlider({
-                pagerCustom: '.albums-bxslider',
                 captions: true
             });
             $('.albums-bxslider').bxSlider({
