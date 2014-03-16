@@ -30,7 +30,7 @@
 /** THEME
 ===================================*/
 
-.bx-wrapper .bx-viewport {
+.main-header .bx-wrapper .bx-viewport {
     left: -40px;
 }
 
@@ -60,14 +60,83 @@
 	bottom: 0;
 	left: 0;
 	background: #666\9;
-	background: rgba(80, 80, 80, 0.75);
+	background: rgba(0, 92, 52, .6);
 	width: 100%;
 }
 
 .bx-wrapper .bx-caption span {
-	color: #fff;
-	font-family: Arial;
-	display: block;
-	font-size: .85em;
-	padding: 10px;
+    color: #fff;
+    display: block;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+}
+
+/* GALLERY */
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+
+.bx-wrapper .bx-prev {
+    left: 0;
+    background: url(images/galerija-strelica-lijevo.png) no-repeat center center;
+}
+    .bx-wrapper .bx-prev:hover {
+        background: url(images/galerija-strelica-lijevo-hover.png) no-repeat center center;
+    }
+.bx-wrapper .bx-next {
+    right: 0;
+    background: url(images/galerija-strelica-desno.png) no-repeat center center;
+}
+    .bx-wrapper .bx-next:hover {
+        background: url(images/galerija-strelica-desno-hover.png) no-repeat center center;
+    }
+.bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: 50%;
+    margin-top: -33px;
+    outline: 0;
+    width: 30px;
+    height: 65px;
+    text-indent: -9999px;
+    z-index: 9999;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+    display: none;
+}
+
+.gallery-albums .bx-wrapper {
+    z-index: 3;
+}
+.albums-navigation .albums-prev {
+    float: left;
+    margin-left: -25px;
+    background: url(images/thumbs-strelica-lijevo.png) no-repeat center center;
+}
+    .albums-navigation .albums-prev:hover {
+        background: url(images/thumbs-strelica-lijevo-hover.png) no-repeat center center;
+    }
+.albums-navigation .albums-next {
+    float: right;
+    margin-right: -25px;
+    background: url(images/thumbs-strelica-desno.png) no-repeat center center;
+}
+    .albums-navigation .albums-next:hover {
+        background: url(images/thumbs-strelica-desno-hover.png) no-repeat center center;
+    }
+.albums-navigation {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: -16px;
+    z-index: 2;
+}
+.albums-navigation a {
+    display: inline-block;
+    outline: 0;
+    width: 17px;
+    height: 32px;
+    text-indent: -9999px;
+}
+.albums-navigation a.disabled {
+    display: none;
 }
