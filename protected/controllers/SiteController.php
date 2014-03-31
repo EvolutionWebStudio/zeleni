@@ -35,6 +35,7 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$this->getLang();
+		$this->pageTitle = "Kompanija Greeny";
         $slides = Slider::model()->findAllByAttributes(array(
             'lang' => $this->lang,
         ));
@@ -80,6 +81,7 @@ class SiteController extends Controller
 	    ));
 
         if($category){
+        	$this->pageTitle = $category->title;
 	        if($subCategory){
 		        $post = Post::model()->findByAttributes(array(
 			        'category_id' => $subCategory->id,
@@ -120,6 +122,7 @@ class SiteController extends Controller
 
 	public function actionGalerija_slika() {
 		$this->getLang();
+		$this->pageTitle = "Galerija slika - Kompanija Greeny";
 		$albumAlias = (isset($_GET['album']))? $_GET['album'] : 'kompanija';
 		$promo = Promo::model()->findByAttributes(array(
 			'lang' => $this->lang,

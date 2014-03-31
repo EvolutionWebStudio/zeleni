@@ -57,7 +57,7 @@ $this->pageTitle=Yii::app()->name;
 	        <?php echo $posts[1]->content; ?>
         </div>
         <div class="small-2 columns text-center">
-            <a class="button small" href="/galerija-slika">Galerija slika</a>
+            <a class="button small" href="<?php echo Yii::app()->request->baseUrl; ?>/galerija-slika">Galerija slika</a>
         </div>
     </div>
     
