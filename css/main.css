@@ -190,6 +190,9 @@ nav ul {
     font-family: Arial, helvetica, sans-serif;
     background: url('../img/greeny-logo-image.png') no-repeat;
 }
+    .logo a {
+        color: #333;
+    }
     .logo img {
         float: left;
         margin-right: 25px;
@@ -269,12 +272,12 @@ nav ul {
 .main-banner {
     position: relative;
     width: 90%;
-    min-width: 1120px;
+    min-width: 1220px;
     margin: 0 auto;
 }
     .main-banner .logo-image {
         position: absolute;
-        left: -60px;
+        left: -70px;
         width: 180px;
         height: 197px;
         background: url("../img/greeny-listovi-veliki.png") 0 0 no-repeat;
@@ -287,8 +290,10 @@ nav ul {
         padding-left: 20px;
     }
         .main-banner .caption-wrapper article {
+            width: 270px;
             padding: 80px 10px 0;
             color: #fff;
+            float: right;
         }
         .main-banner .caption-wrapper hgroup {
             margin-bottom: .5rem;

@@ -34,7 +34,7 @@ $this->pageTitle=Yii::app()->name;
                 <ul class="clearfix" id="bx-pager">
                     <?php  $i = 0;
                     foreach($slides as $slide): ?>
-                        <li class="large-2 columns">
+                        <li class="small-2 columns">
                             <a href="<?php echo Yii::app()->request->baseUrl . '/'.$slide->link; ?>" data-slide-index="<?php echo $i++; ?>"><span class="slide-number">0<?php echo $slide->number; ?></span> <?php echo $slide->title; ?> <span class="link-arrow">&gt;</span></a>
                         </li>
                     <?php endforeach; ?>
@@ -44,19 +44,19 @@ $this->pageTitle=Yii::app()->name;
     </div>
 
     <div class="row wide top-promo">
-        <div class="large-3 columns relative">
+        <div class="small-3 columns relative">
             <div class="promo-logo">
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-logo-sareni-veliki.png" alt=""/>
             </div>
             &nbsp;
         </div>
-        <div class="large-4 columns">
+        <div class="small-4 columns">
 			<?php echo $posts[0]->content; ?>
         </div>
-        <div class="large-3 columns">
+        <div class="small-3 columns">
 	        <?php echo $posts[1]->content; ?>
         </div>
-        <div class="large-2 columns text-center">
+        <div class="small-2 columns text-center">
             <a class="button small" href="/galerija-slika">Galerija slika</a>
         </div>
     </div>

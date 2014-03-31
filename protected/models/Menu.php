@@ -130,7 +130,7 @@ class Menu extends CActiveRecord
 		foreach ($menu as $row) {
 				$categories[] = array('label' => $row['item'], 'url' => array('/'.$row['category']->alias), 'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false);
 		}
-		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>'large-5 columns text-left'), 'activateItems' => true);
+		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>'small-5 columns text-left'), 'activateItems' => true);
 		return $menu;
 	}
 
@@ -142,9 +142,9 @@ class Menu extends CActiveRecord
 		foreach ($menu as $row) {
 			$subCategories = Menu::getSubMenu($row->id,$row['category']->alias);
 			if($subCategories)
-				$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'large-3 columns'), 'activeItems' => true, 'url' => array('/'.$row['category']->alias),'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false, 'items' => $subCategories);
+				$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'small-3 columns'), 'activeItems' => true, 'url' => array('/'.$row['category']->alias),'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false, 'items' => $subCategories);
 			else
-				$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'large-3 columns'), 'url' => array('/'.$row['category']->alias), 'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false);
+				$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'small-3 columns'), 'url' => array('/'.$row['category']->alias), 'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false);
 		}
 		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>''),'activeCssClass'=>'active', 'activateItems' => true);
 		return $menu;
