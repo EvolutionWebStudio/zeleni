@@ -107,6 +107,7 @@ body {
 }
 p {
     line-height: 1.2rem;
+    font-size: .875rem;
 }
 h1 {
     font-family: "Georgia", Times, sans-serif;
@@ -258,6 +259,7 @@ nav ul {
     position: relative;
     width: 90%;
     min-width: 1220px;
+    max-width: 1440px;
     margin: 0 auto;
 }
     .main-banner .logo-image {
@@ -326,6 +328,7 @@ nav ul {
     }
 
 /* SLIDER */
+
 .slider-bar {
     background: #005C34;
 }
@@ -386,9 +389,9 @@ nav ul {
         }
     .main-sidebar nav a {
         display: inline-block;
-        width: 175px;
+        width: 195px;
         padding: 5px 0;
-
+        font-size: .95rem;
         color: #58595b;
     }
         .main-sidebar nav ul ul a {
@@ -425,6 +428,7 @@ nav ul {
     }
         .article-menu ul li a {
             color: #58595b;
+            font-size: .95rem;
         }
 .main-content .article-content {
     width: 500px;
@@ -541,7 +545,7 @@ table {
 
 .promo-sok {
     margin-top: 50px;
-    margin-bottom: 93px;
+    margin-bottom: 40px;
     border-top: 1px solid #c2c3bf;
     border-bottom: 1px solid #c2c3bf;
 }
@@ -661,8 +665,14 @@ table {
             padding: 0 10px;
             font-size: .9rem;
         }
-
-
+.footer-logo {
+    margin-bottom: 20px;
+}
+    .footer-logo img {
+        display: block;
+        width: 125px;
+        margin: 0 auto;
+    }
 
 
 

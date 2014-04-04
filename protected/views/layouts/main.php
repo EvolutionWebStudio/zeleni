@@ -59,6 +59,13 @@
 
     <?php echo $content; ?>
 
+
+    <div class="clearfix footer-logo">
+        <div class="small-3 columns small-centered">
+            <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-logo-sareni-mali.png" alt="Greeny Arandjelovac logo"/>
+        </div>
+    </div>
+
     <div class="bar violet">
         <footer class="main-footer">
             <div class="row collapse wide">
