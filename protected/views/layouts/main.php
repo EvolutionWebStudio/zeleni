@@ -48,9 +48,9 @@
         <div class="row collapse wide relative">
             <h1 class="logo small-4 columns clearfix">
                 <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-logo-image.png" alt=""/>
-                    <span>GREENY</span>proizvodnja i čuvanje voća</h1>
+                    <span>GREENY</span>proizvodnja i čuvanje voća
                 </a>
+            </h1>
             <nav class="main-menu small-8 columns">
                 <?php $this->widget('application.components.GMenu', Menu::getMainMenu()); ?>
             </nav>
