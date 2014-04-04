@@ -39,7 +39,7 @@
             <nav class="article-menu">
                 <ul>
 	                <?php if($subCategories): foreach($subCategories as $sc): ?>
-		                <li><a href="<?php echo ($sc->type == Category::TYPE_SELF_LINK)?'#' . $sc->alias : '/'.$sc->alias; ?>"><?php echo $sc->title; ?></a></li>
+		                <li><a href="<?php echo ($sc->type == Category::TYPE_SELF_LINK)?'#' . $sc->alias : Yii::app()->request->getBaseUrl(true).'/'.$sc->alias; ?>"><?php echo $sc->title; ?></a></li>
 	                <?php endforeach; endif;?>
                 </ul>
             </nav>

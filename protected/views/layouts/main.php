@@ -47,7 +47,7 @@
     <header class="main-header">
         <div class="row collapse wide relative">
             <h1 class="logo small-4 columns clearfix">
-                <a href="<?php echo Yii::app()->request->baseUrl; ?>">
+                <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>">
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-logo-image.png" alt=""/>
                     <span>GREENY</span>proizvodnja i čuvanje voća</h1>
                 </a>
