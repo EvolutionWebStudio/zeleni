@@ -116,10 +116,10 @@ nav ul {
     list-style: none;
 }
 .row.wide {
-    min-width: 1220px;
+    min-width: 960px;
 }
 .row.wider {
-    min-width: 1440px;
+    min-width: 1220px;
 }
 .bar {
     width: 100%;
@@ -258,8 +258,8 @@ nav ul {
 .main-banner {
     position: relative;
     width: 90%;
-    min-width: 1220px;
-    max-width: 1440px;
+    /*max-height: 260px;*/
+    width: 1220px;
     margin: 0 auto;
 }
     .main-banner .logo-image {
@@ -302,7 +302,7 @@ nav ul {
             line-height: 1.1rem;
         }
     .main-banner .image-wrapper {
-        float: right;
+        float: right; /* TODO ovo pravi problem sa povjavljivanjem slike lijevo */
         width: 75%;
         text-align: right;
         min-width: 910px;
