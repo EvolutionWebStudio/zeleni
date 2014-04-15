@@ -27,19 +27,20 @@
     <![endif]-->
 
     <div class="bar gray">
-        <nav class="info-menu">
-            <div class="row collapse wide">
+        <nav>
+            <div class="row collapse wide info-menu">
 	            <?php $this->widget('zii.widgets.CMenu', Menu::getTopMenu()); ?>
-                <ul class="small-6 columns text-right">
+                <ul class="small-7 columns text-right">
                     <li>T:+381 34 6709-141</li>
                     <li>F:+381 34 6709-230</li>
                     <li>e-mail: greeny@vozd.net</li>
+                    <li class="language-select">
+                        <a href="#" class="flag serbia" ></a>
+                        <a href="#" class="flag russia" ></a>
+                        <a href="#" class="flag unitedkingdom" ></a>
+                    </li>
                 </ul>
-                <ul class="small-1 columns language-select">
-                    <li><a href="#" class="flag serbia" ></a></li>
-                    <li><a href="#" class="flag russia" ></a></li>
-                    <li><a href="#" class="flag unitedkingdom" ></a></li>
-                </ul>
+
             </div>
         </nav>
     </div>
@@ -69,8 +70,8 @@
     <div class="bar violet">
         <footer class="main-footer">
             <div class="row collapse wide">
-                <span class="small-4 columns copyright">&copy; <?php echo date('Y'); ?> <strong>Greeny</strong> doo Aranđelovac</span>
-                <ul class="small-8 columns text-right">
+                <span class="small-3 columns copyright">&copy; <?php echo date('Y'); ?> <strong>Greeny</strong> doo Aranđelovac</span>
+                <ul class="small-9 columns text-right">
                     <li>Orašac bb, Aranđelovac, Srbija</li>
                     <li>T:+381 34 6709-141</li>
                     <li>F:+381 34 6709-230</li>

@@ -116,10 +116,10 @@ nav ul {
     list-style: none;
 }
 .row.wide {
-    min-width: 960px;
+    width: 960px;
 }
 .row.wider {
-    min-width: 1220px;
+    width: 1220px;
 }
 .bar {
     width: 100%;
@@ -141,26 +141,31 @@ nav ul {
 
 /* INFO MENU */
 
-.info-menu ul {
-    margin: 0;
-    font-size: 12px;
-    list-style: none;
+.info-menu {
+    border-bottom: 1px solid #c2c3bf;
 }
-    .info-menu ul li {
-        display: inline-block;
-        margin: 5px 10px;
+    .info-menu ul {
+        margin: 0;
+        font-size: 12px;
+        list-style: none;
     }
-    .info-menu a {
-        text-transform: uppercase;
-        color: #505251;
+        .info-menu ul li {
+            display: inline-block;
+            margin: 5px 10px;
+        }
+        .info-menu a {
+            text-transform: uppercase;
+            color: #505251;
 
-    }
+        }
 
 .language-select {
-    text-align: right;
+
 }
-    .language-select li {
-        margin: .3rem .1rem!important;
+    .language-select a {
+        display: inline-block;
+        line-height: 17px;
+        vertical-align: middle;
     }
 .flag {
     display: block;
@@ -179,16 +184,16 @@ nav ul {
 
 
 .main-header {
-    padding-top: 20px;
-    width: 1340px;
+    padding-top: 10px;
+    width: 1220px;
     margin: auto;
-    border-top: 1px solid #c2c3bf;
 }
 .logo a {
     display: block;
-    width: 360px;
-    height: 100px;
-    background: url('../img/Greeny Arandjelovac logo.jpg') 0 0 no-repeat;
+    width: 240px;
+    height: 69px;
+    margin-top: 20px;
+    background: url('../img/Greeny-Arandjelovac-logo.png') 0 0 no-repeat;
     text-indent: -9999px;
 }
 
@@ -208,9 +213,9 @@ nav ul {
     }
     .main-menu > ul > li > a {
         display: block;
-        padding: 66px 0 7px;
+        padding: 75px 0 5px;
         text-transform: uppercase;
-        font-size: 18px;
+        font-size: 14px;
         color: #250011;
         border-bottom: 8px solid transparent;
     }
@@ -222,7 +227,7 @@ nav ul {
         display: none;
         position: absolute;
         left: 0;
-        top: 109px;
+        top: 110px;
         padding: .5rem 5rem;
         background: #fff;
         z-index: 9999;
@@ -243,7 +248,7 @@ nav ul {
             text-align: center;
             color: #444;
             text-transform: uppercase;
-            font-size: .9rem;
+            font-size: 12px;
         }
             .main-menu .submenu li a:hover {
                 color: #111;
@@ -257,56 +262,55 @@ nav ul {
 
 .main-banner {
     position: relative;
-    width: 90%;
-    /*max-height: 260px;*/
     width: 1220px;
     margin: 0 auto;
+    overflow: hidden;
+}
+.main-banner ul {
+    list-style: none;
+    margin: 0;
 }
     .main-banner .logo-image {
         position: absolute;
-        left: -70px;
-        width: 180px;
-        height: 197px;
+        left: 40px;
+        top: -20px;
+        width: 145px;
+        height: 159px;
         background: url("../img/greeny-listovi-veliki.png") 0 0 no-repeat;
-        z-index: 999;
+        z-index: 6;
     }
     .main-banner .caption-wrapper {
-        min-width: 270px;
+        width: 270px;
+        margin-left: 130px;
         float: left;
-        width: 22%;
-        padding-left: 20px;
+        padding: 50px 20px 0;
     }
         .main-banner .caption-wrapper article {
-            width: 270px;
-            padding: 80px 10px 0;
             color: #fff;
-            float: right;
         }
         .main-banner .caption-wrapper hgroup {
-            margin-bottom: .5rem;
+            margin-bottom: 1rem;
         }
         .main-banner .caption-wrapper h1 {
             margin: 0;
             color: #fff;
-            font-size: 3rem;
-            line-height: 3.2rem;
+            font-size: 32px;
+            line-height: 36px;
         }
         .main-banner .caption-wrapper h2 {
             margin: 0;
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 18px;
         }
         .main-banner .caption-wrapper p {
             margin-bottom: 0;
-            font-size: .95rem;
-            line-height: 1.1rem;
+            font-size: 14px;
+            line-height: 16px;
         }
     .main-banner .image-wrapper {
-        float: right; /* TODO ovo pravi problem sa povjavljivanjem slike lijevo */
-        width: 75%;
+        float: right;
+        width: 813px;
         text-align: right;
-        min-width: 910px;
-        margin-right: 20px;
     }
         .main-banner .image-wrapper img {
             width: 100%;
@@ -317,9 +321,9 @@ nav ul {
         z-index: 3;
     }
     .banner-line.top {
-        top: -2px;
         height: 2px;
         background: #f37021;
+        z-index: 8;
     }
     .banner-line.bottom {
         bottom: 0;
@@ -334,25 +338,27 @@ nav ul {
 }
 .slider-menu ul {
     margin: 0;
-    font-size: 14px;
 }
     .slider-menu ul li {
         border-left: 1px solid #cdcdc7;
+        padding: 0 2px;
+        text-align: center;
     }
         .slider-menu ul li:last-child {
             border-right: 1px solid #cdcdc7;
         }
-        .slider-menu ul li.active .slide-number {
+        .slider-menu ul li.active .slide-number,
+        .slider-menu ul li:hover .slide-number{
             color: #8dc43f;
         }
         .slider-menu ul li a {
             display: block;
             color: #5f6266;
             padding-bottom: 5px;
+            font-size: 12px;
         }
     .slider-menu .slide-number {
-        padding: 0 10px 0 0;
-        font-size: 24px;
+        font-size: 20px;
         font-family: "Georgia", Times, sans-serif;
     }
 
@@ -372,7 +378,7 @@ nav ul {
 /* MAIN SIDEBAR */
 
 .main-sidebar {
-    width: 245px;
+    width: 277px;
     padding: 20px 0 50px 25px;
     margin: 0 0 50px;
     border-right: 1px solid #888b88;
@@ -389,9 +395,9 @@ nav ul {
         }
     .main-sidebar nav a {
         display: inline-block;
-        width: 195px;
+        width: 230px;
         padding: 5px 0;
-        font-size: .95rem;
+        font-size: 14px;
         color: #58595b;
     }
         .main-sidebar nav ul ul a {
@@ -401,22 +407,22 @@ nav ul {
 /* MAIN CONTENT */
 
 .main-content {
-    width: 975px;
+    width: 683px;
 }
 .main-content article {
-   padding-left: 35px;
+   padding-left: 20px;
 }
     .article-title {
-        padding-left: 35px;
+        padding-left: 20px;
         margin: 0;
         background: #ebebe3;
-        line-height: 65px;
-        font-size: 40px;
+        line-height: 40px;
+        font-size: 24px;
         color: #58595b;
     }
 .article-menu ul {
     display: inline-block;
-    margin: 0 0 0 35px;
+    margin: 0 0 0 20px;
     border-top: 1px solid #dbdcdb;
 }
     .article-menu ul li {
@@ -428,7 +434,7 @@ nav ul {
     }
         .article-menu ul li a {
             color: #58595b;
-            font-size: .95rem;
+            font-size: 12px;
         }
 .main-content .article-content {
     width: 500px;
@@ -496,8 +502,8 @@ table {
 }
     .top-promo .promo-logo {
         position: absolute;
-        top: -60px;
-        left: 50px;
+        top: -40px;
+        left: 0px;
         z-index: 6;
     }
     .top-promo p {
@@ -507,7 +513,7 @@ table {
         margin: 0;
         background: #c8d32e;
         text-transform: uppercase;
-        padding: .7rem 1rem;
+        padding: .7rem .5rem;
     }
         .top-promo .button:hover {
             background: #ed7a26;
@@ -526,8 +532,8 @@ table {
         .link-blocks li a {
             position: relative;
             display: inline-block;
-            width: 244px;
-            height: 245px;
+            width: 240px;
+            height: 240px;
         }
             .link-blocks li a span {
                 position: absolute;
@@ -551,13 +557,14 @@ table {
 }
     .promo-sok .sok-logo {
         position: absolute;
-        top: -50px;
+        top: -40px;
     }
     .promo-sok article {
-        padding: 40px 10px 20px;
+        padding: 10px 10px 10px;
     }
         .promo-sok article p {
-            margin-bottom: .5rem;
+            margin-bottom: .2rem;
+            line-height: 18px;
         }
         .promo-sok article a {
             color: #f37021;
@@ -650,9 +657,18 @@ table {
 
 /* FOOTER */
 
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+.footer-logo img {
+    display: block;
+    width: 125px;
+    margin: 0 auto;
+}
 .main-footer {
     min-height: 145px;
-    padding-top: 30px;
+    padding-top: 20px;
     color: #fff;
     font-size: .9rem;
 }
@@ -662,17 +678,13 @@ table {
     }
         .main-footer ul li {
             display: inline-block;
-            padding: 0 10px;
+            padding: 0 5px;
             font-size: .9rem;
         }
-.footer-logo {
-    margin-bottom: 20px;
-}
-    .footer-logo img {
-        display: block;
-        width: 125px;
-        margin: 0 auto;
+    .main-footer .copyright {
+        line-height: 26px;
     }
+
 
 
 

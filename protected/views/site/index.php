@@ -44,7 +44,7 @@ $this->pageTitle=Yii::app()->name;
     </div>
 
     <div class="row wide top-promo">
-        <div class="small-3 columns relative">
+        <div class="small-2 columns relative">
             <div class="promo-logo">
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/greeny-logo-sareni-veliki.png" alt=""/>
             </div>
@@ -53,7 +53,7 @@ $this->pageTitle=Yii::app()->name;
         <div class="small-4 columns">
 			<?php echo $posts[0]->content; ?>
         </div>
-        <div class="small-3 columns">
+        <div class="small-4 columns">
 	        <?php echo $posts[1]->content; ?>
         </div>
         <div class="small-2 columns text-center">
