@@ -18,10 +18,13 @@ $(document).ready(function(){
     });
 
 /* Load slider on articles */
-    $('.article-slider').bxSlider({
-        controls: false,
-        auto: true
-    });
+    if ($('.article-slider li').length > 1){
+        $('.article-slider').bxSlider({
+            controls: false,
+            auto: true,
+            autoHidePager: true
+        });
+    }
 
 /* Load slider on gallery */
     $('.gallery-bxslider').bxSlider({

@@ -385,18 +385,22 @@ nav ul {
     text-transform: uppercase;
 }
     .main-sidebar ul {
-         margin: 0;
+        margin: 0;
     }
         .main-sidebar ul ul {
             border-top: 1px solid #dbdcdb;
+            background: #fff;
         }
         .main-sidebar nav > ul > li {
             border-bottom: 1px solid #dbdcdb;
         }
+            .main-sidebar nav ul li:hover {
+                background: #ebebe3;
+            }
     .main-sidebar nav a {
         display: inline-block;
         width: 230px;
-        padding: 5px 0;
+        padding: 5px 0 5px 3px;
         font-size: 14px;
         color: #58595b;
     }
@@ -420,6 +424,9 @@ nav ul {
         font-size: 24px;
         color: #58595b;
     }
+    .main-content article ul {
+        font-size: 14px;
+    }
 .article-menu ul {
     display: inline-block;
     margin: 0 0 0 20px;
@@ -442,7 +449,7 @@ nav ul {
     font-size: 14px;
 }
     .main-content .article-content h2 {
-        font-size: 18px;
+        font-size: 16px;
         color: #58595b;
         text-transform: uppercase;
         font-weight: normal;
@@ -626,15 +633,15 @@ table {
             position: relative;
             display: inline-block;
             float: left;
-            width: 244px;
-            height: 285px;
+            width: 192px;
+            height: 225px;
         }
             .gallery-albums a .thumb-overlay {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 244px;
-                height: 245px;
+                width: 192px;
+                height: 192px;
                 background: rgba(0, 92, 52, .6);
             }
                 .gallery-albums a:hover .thumb-overlay,
@@ -650,7 +657,7 @@ table {
                 color: #444;
             }
 .albums-bar {
-    max-height: 245px;
+    max-height: 192px;
     margin-bottom: 100px;
 }
 

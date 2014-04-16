@@ -7,7 +7,6 @@
             <ul class="article-slider">
                 <?php foreach($category->images as $image): ?>
                     <li class="clearfix">
-
                         <div class="caption-wrapper">
                             <article>
                                 <hgroup>
@@ -16,7 +15,7 @@
                             </article>
                         </div>
                         <div class="image-wrapper wider-image">
-                            <img src="<?php echo Yii::app()->request->baseUrl . '/img/articles/' . $image->name; ?>" alt="Clanak placeholder" class="clanak-placeholder"/>
+                            <img src="<?php echo Yii::app()->request->baseUrl . '/img/articles/' . $image->name; ?>" alt="<?php echo $image->name; ?>"/>
                         </div>
                     </li>
                 <?php endforeach; ?>
