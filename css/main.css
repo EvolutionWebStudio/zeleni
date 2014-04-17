@@ -650,7 +650,7 @@ table {
                 }
             .gallery-albums .album-name {
                 position: absolute;
-                bottom: -10px;
+                bottom: -20px;
                 width: 100%;
                 text-align: center;
                 text-transform: uppercase;
@@ -660,7 +660,9 @@ table {
     max-height: 192px;
     margin-bottom: 100px;
 }
-
+.bar.gallery-background {
+    background: url("../img/gallery-background.jpg") center center no-repeat;
+}
 
 /* FOOTER */
 

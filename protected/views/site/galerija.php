@@ -1,8 +1,7 @@
-<div class="bar green">
+<div class="bar green gallery-background">
     <div class="row collapse wide main-gallery">
         <div class="clearfix banner-line top"></div>
         <div class="logo-image"></div>
-
         <ul class="gallery-bxslider">
             <?php foreach($images as $image): ?>
                 <li>
@@ -12,6 +11,7 @@
         </ul>
         <div class="clearfix banner-line bottom"></div>
     </div>
+
 </div>
 
 <div class="bar gray albums-bar">
