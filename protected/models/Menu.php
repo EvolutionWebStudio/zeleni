@@ -160,8 +160,12 @@ class Menu extends CActiveRecord
 				if($row['category']->type == Category::TYPE_SELF_LINK) {
 					$data[] = array('label' => $row['item'], 'url' => array('/' . $alias.'#'.$row['category']->alias));
 				}
-				else
-					$data[] = array('label' => $row['item'], 'url' => array($alias.'/'.$row['category']->alias));
+				else {
+					if($alias == 'sveze-voce')
+						$data[] = array('label' => $row['item'], 'url' => array('/'.$row['category']->alias));
+					else
+						$data[] = array('label' => $row['item'], 'url' => array($alias.'/'.$row['category']->alias));
+				}
 			}}
 		else
 			$data = array();

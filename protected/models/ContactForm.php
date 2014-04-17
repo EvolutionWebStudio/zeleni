@@ -26,6 +26,7 @@ class ContactForm extends CFormModel
 		return array(
 			// name, email, subject and body are required
 			array('name, email, company, body', 'required'),
+			array('webSite, phone', 'safe'),
 			// email has to be a valid email address
 			array('email', 'email'),
 		);

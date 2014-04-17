@@ -121,7 +121,7 @@
 
 
 								<div class="buttons small-9 columns push-3">
-									<?php echo CHtml::submitButton('Submit'); ?>
+									<?php echo CHtml::submitButton('Pošalji'); ?>
 								</div>
 
 								<?php $this->endWidget(); ?>

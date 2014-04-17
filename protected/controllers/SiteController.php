@@ -190,10 +190,13 @@ class SiteController extends Controller
 				$headers="From: $name <{$model->email}>\r\n".
 					"Reply-To: {$model->email}\r\n".
 					"MIME-Version: 1.0\r\n".
-					"Content-Type: text/plain; charset=UTF-8";
-
-				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+					"Content-Type: text/html; charset=UTF-8";
+				$content = 'Firma: ' . $model->company . '<br />' .
+							'Telefon: ' . $model->phone . '<br />' .
+							'Web sajt: ' . $model->webSite . '<br />' .
+							'Poruka :' . $model->body;
+				mail(Yii::app()->params['contactEmail'],$subject,$content,$headers);
+				Yii::app()->user->setFlash('contact','Hvala Vam što ste nas kontaktirali.');
 				$this->refresh();
 			}
 		}
