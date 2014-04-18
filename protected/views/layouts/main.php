@@ -35,9 +35,9 @@
                     <li>F:+381 34 6709-230</li>
                     <li>e-mail: greeny@vozd.net</li>
                     <li class="language-select">
-                        <a href="#" class="flag serbia" ></a>
+                        <a href="<?php echo Yii::app()->request->baseUrl.'setlang/sr'; ?>" class="flag serbia" ></a>
                         <a href="#" class="flag russia" ></a>
-                        <a href="#" class="flag unitedkingdom" ></a>
+                        <a href="<?php echo Yii::app()->request->baseUrl.'setlang/en'; ?>" class="flag unitedkingdom" ></a>
                     </li>
                 </ul>
 

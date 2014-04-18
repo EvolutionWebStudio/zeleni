@@ -141,10 +141,16 @@ class Menu extends CActiveRecord
 		$menu = Menu::model()->findAll($criteria);
 		foreach ($menu as $row) {
 			$subCategories = Menu::getSubMenu($row->id,$row['category']->alias);
-			if($subCategories)
-				$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'small-3 columns'), 'activeItems' => true, 'url' => array('/'.$row['category']->alias),'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false, 'items' => $subCategories);
+
+			if($subCategories) {
+				if($row['category']->alias == 'proizvodi'){
+					$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'small-3 columns'), 'activeItems' => true, 'url' => '/','active'=>(Yii::app()->request->url=='/')?true:false, 'items' => $subCategories);
+				}else {
+					$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'small-3 columns'), 'activeItems' => true, 'url' => array('/'.$row['category']->alias),'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false, 'items' => $subCategories);
+				}
+			}
 			else
-				$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'small-3 columns'), 'url' => array('/'.$row['category']->alias), 'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false);
+				$categories[] = array('label' => $row['item'], 'itemOptions' => array('class' => 'small-3 columns'), 'url' => array(Yii::app()->request->baseUrl.'/'.$row['category']->alias), 'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false);
 		}
 		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>''),'activeCssClass'=>'active', 'activateItems' => true);
 		return $menu;
@@ -203,8 +209,13 @@ class Menu extends CActiveRecord
 			foreach ($subMenu as $row){
 					if($row['category']->type == Category::TYPE_SELF_LINK)
 						$data[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array('/' . $alias . '#' . $row['category']->alias));
-					else
-						$data[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array($alias.'/'.$row['category']->alias));
+					else {
+						if($alias == 'proizvodi'){
+							$data[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array('/'.$row['category']->alias));
+						}else {
+							$data[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'url' => array($alias.'/'.$row['category']->alias));
+						}
+					}
 			}
 		else
 			$data = array();

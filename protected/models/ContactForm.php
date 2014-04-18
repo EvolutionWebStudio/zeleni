@@ -41,13 +41,22 @@ class ContactForm extends CFormModel
 	{
 		$this->getLang();
 		if(Yii::app()->session['_lang'] == 'sr')
-		return array(
-			'name' => 'Ime',
-			'email' => 'E-mail',
-			'company' => 'Firma',
-			'body' => 'Poruka',
-			'phone' => 'Telefon',
-			'webSite' => 'Web sajt'
-		);
+			return array(
+				'name' => 'Ime',
+				'email' => 'E-mail',
+				'company' => 'Firma',
+				'body' => 'Poruka',
+				'phone' => 'Telefon',
+				'webSite' => 'Web sajt'
+			);
+		if(Yii::app()->session['_lang'] == 'en')
+			return array(
+				'name' => 'Name',
+				'email' => 'E-mail',
+				'company' => 'Company',
+				'body' => 'Message',
+				'phone' => 'Phone',
+				'webSite' => 'Web site'
+			);
 	}
 }

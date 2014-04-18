@@ -196,7 +196,17 @@ class SiteController extends Controller
 							'Web sajt: ' . $model->webSite . '<br />' .
 							'Poruka :' . $model->body;
 				mail(Yii::app()->params['contactEmail'],$subject,$content,$headers);
-				Yii::app()->user->setFlash('contact','Hvala Vam što ste nas kontaktirali.');
+				switch ($this->lang) {
+					case 'sr':
+						Yii::app()->user->setFlash('contact','Hvala Vam što ste nas kontaktirali.');
+						break;
+					case 'en':
+						Yii::app()->user->setFlash('contact','Thank you for taking the time to contact us!');
+						break;
+					case 'ru':
+						Yii::app()->user->setFlash('contact','Hvala Vam što ste nas kontaktirali.');
+						break;
+				}
 				$this->refresh();
 			}
 		}
@@ -240,6 +250,16 @@ class SiteController extends Controller
 	public function actionLogout()
 	{
 		Yii::app()->user->logout();
+		$this->redirect(Yii::app()->homeUrl);
+	}
+
+	public function actionSetlang()
+	{
+		$lng = isset($_GET['lang'])? $_GET['lang'] : "";
+		if($lng == 'sr' || $lng == 'en' || $lng == 'ru')
+			Yii::app()->session['_lang'] = $lng;
+		if(!isset(Yii::app()->session['_lang']))
+			Yii::app()->session['_lang'] = 'sr';
 		$this->redirect(Yii::app()->homeUrl);
 	}
 }

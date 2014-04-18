@@ -121,7 +121,19 @@
 
 
 								<div class="buttons small-9 columns push-3">
-									<?php echo CHtml::submitButton('Pošalji'); ?>
+									<?php
+									switch ($this->lang) {
+										case 'sr':
+											echo CHtml::submitButton('Pošalji');
+											break;
+										case 'en':
+											echo CHtml::submitButton('Submit');
+											break;
+										case 'ru':
+											echo CHtml::submitButton('Pošalji');
+											break;
+									}
+									?>
 								</div>
 
 								<?php $this->endWidget(); ?>

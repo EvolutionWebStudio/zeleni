@@ -45,6 +45,7 @@ return array(
                 '<controller:(category|slider|banner|album|image|post|promo|menu|categoryimage)>/<action:\w+>'=>'<controller>/<action>',
 				'login' => 'site/login',
 				'logout' => 'site/logout',
+				'setlang/<lang:(sr|en|ru)>' => 'site/setLang',
 				'galerija-slika/<album:[0-9a-zA-Z_\-]+>/*' => 'site/galerija_slika',
 				'galerija-slika' => 'site/galerija_slika',
 				'kontaktirajte-nas' => 'site/contact',

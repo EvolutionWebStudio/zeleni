@@ -57,7 +57,21 @@ $this->pageTitle=Yii::app()->name;
 	        <?php echo $posts[1]->content; ?>
         </div>
         <div class="small-2 columns text-center">
-            <a class="button small" href="<?php echo Yii::app()->request->baseUrl; ?>/galerija-slika">Galerija slika</a>
+            <a class="button small" href="<?php echo Yii::app()->request->baseUrl; ?>/galerija-slika">
+	            <?php
+	            switch ($this->lang) {
+		            case 'sr':
+			            echo 'Galerija slika';
+			            break;
+		            case 'en':
+			            echo 'Photo gallery';
+			            break;
+		            case 'ru':
+			            echo 'Pošalji';
+			            break;
+	            }
+	            ?>
+            </a>
         </div>
     </div>
     
