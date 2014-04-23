@@ -6,26 +6,29 @@ $this->pageTitle=Yii::app()->name;
 
 <div class="slider">
     <div class="bar slider-bar">
-        <div class="clearfix main-banner">
-            <div class="clearfix banner-line top"></div>
-            <div class="logo-image"></div>
-                <ul class="main-slider">
-                    <?php foreach($slides as $slide): ?>
-                        <li class="clearfix" data-color="#<?php echo ($slide->color)? $slide->color : '005C34' ?>">
-                            <div class="caption-wrapper">
-                                <article>
-                                    <?php echo $slide->content; ?>
-                                </article>
-                            </div>
+	    <div class="main-banner-wrapper">
+		    <div class="clearfix main-banner">
+			    <div class="clearfix banner-line top"></div>
+			    <div class="logo-image"></div>
+			    <ul class="main-slider">
+				    <?php foreach($slides as $slide): ?>
+					    <li class="clearfix" data-color="#<?php echo ($slide->color)? $slide->color : '005C34' ?>">
+						    <div class="caption-wrapper">
+							    <article>
+								    <?php echo $slide->content; ?>
+							    </article>
+						    </div>
 
-                            <div class="image-wrapper wider-image">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/slider/<?php echo $slide->image;?>" alt="Greeny tresnja"/>
-                            </div>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            <div class="clearfix banner-line bottom"></div>
-        </div>
+						    <div class="image-wrapper wider-image">
+							    <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/slider/<?php echo $slide->image;?>" alt="Greeny tresnja"/>
+						    </div>
+					    </li>
+				    <?php endforeach; ?>
+			    </ul>
+			    <div class="clearfix banner-line bottom"></div>
+		    </div>
+	    </div>
+
     </div>
 
     <div class="bar gray">
