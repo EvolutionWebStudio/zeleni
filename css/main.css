@@ -134,6 +134,9 @@ nav ul {
     .bar.gray {
         background: #ebebe3;
     }
+    .bar.gray2 {
+        background: #e0e8c6;
+    }
     .bar.violet {
         background: #250011;
     }
@@ -158,10 +161,23 @@ nav ul {
             margin: 5px 10px;
         }
         .info-menu a {
+            display: inline-block;
             text-transform: uppercase;
             color: #505251;
 
         }
+
+    ul.info-menu-nav li {
+        margin: 0;
+        padding: 0;
+    }
+        .info-menu-nav li a {
+            display: block;
+            padding: 5px 10px;
+        }
+            .info-menu-nav li a:hover {
+                background: #fff;
+            }
 
 .language-select {
 

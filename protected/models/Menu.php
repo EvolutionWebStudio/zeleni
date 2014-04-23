@@ -130,7 +130,7 @@ class Menu extends CActiveRecord
 		foreach ($menu as $row) {
 				$categories[] = array('label' => $row['item'], 'url' => array('/'.$row['category']->alias), 'active'=>(Yii::app()->request->url=='/'.$row['category']->alias)?true:false);
 		}
-		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>'small-5 columns text-left'), 'activateItems' => true);
+		$menu = array('items'=>$categories, 'htmlOptions'=>array('class'=>'small-5 columns text-left info-menu-nav'), 'activateItems' => true);
 		return $menu;
 	}
 
