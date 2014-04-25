@@ -167,7 +167,7 @@ class Menu extends CActiveRecord
 					$data[] = array('label' => $row['item'], 'url' => array('/' . $alias.'#'.$row['category']->alias));
 				}
 				else {
-					if($alias == 'sveze-voce')
+					if($alias == 'sveze-voce' || $alias == 'proizvodi')
 						$data[] = array('label' => $row['item'], 'url' => array('/'.$row['category']->alias));
 					else
 						$data[] = array('label' => $row['item'], 'url' => array($alias.'/'.$row['category']->alias));
@@ -185,10 +185,19 @@ class Menu extends CActiveRecord
 		$menu = Menu::model()->findAll($criteria);
 		foreach ($menu as $row) {
 			$subCategories = Menu::getSidebarSubMenu($row->id, $row['category']->alias);
-			if($subCategories)
-				$categories[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'itemOptions' => array('class' => ''), 'activeItems' => true, 'url' => array('/'.$row['category']->alias), 'items' => $subCategories);
+			if($subCategories) {
+				if($row['category']->alias == 'proizvodi'){
+					$categories[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'itemOptions' => array('class' => ''), 'activeItems' => true, 'url' => '/', 'items' => $subCategories);
+				}else {
+					$categories[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'itemOptions' => array('class' => ''), 'activeItems' => true, 'url' => array('/'.$row['category']->alias), 'items' => $subCategories);
+				}
+			}
 			else
-				$categories[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'itemOptions' => array('class' => ''), 'url' => array('/'.$row['category']->alias));
+				if($row['category']->alias == 'proizvodi'){
+					$categories[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'itemOptions' => array('class' => ''), 'url' => '/');
+				}else {
+					$categories[] = array('label' => $row['item'], 'template'=>'{menu}<span class="link-arrow">&gt;</span>', 'itemOptions' => array('class' => ''), 'url' => array('/'.$row['category']->alias));
+				}
 		}
 		$menu = array(
 			'items'=>$categories,

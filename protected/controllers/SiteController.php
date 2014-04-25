@@ -123,7 +123,7 @@ class SiteController extends Controller
 	public function actionGalerija_slika() {
 		$this->getLang();
 		$this->pageTitle = "Galerija slika - Kompanija Greeny";
-		$albumAlias = (isset($_GET['album']))? $_GET['album'] : 'kompanija';
+		$albumAlias = (isset($_GET['album']))? $_GET['album'] : null;
 		$promo = Promo::model()->findByAttributes(array(
 			'lang' => $this->lang,
 		));
@@ -135,14 +135,24 @@ class SiteController extends Controller
 			'alias' => $albumAlias,
 		));
 		if(!$album){
-			$album = Album::model()->findByAttributes(array(
+			$albums = Album::model()->findAllByAttributes(array(
 				'lang' => $this->lang,
-				'alias' => 'kompanija',
+
+			));
+			$albumIds = array();
+			foreach($albums as $album) {
+				array_push($albumIds,$album->id);
+			}
+			$images = Image::model()->findAllByAttributes(array(
+				'album_id' => $albumIds,
 			));
 		}
-		$images = Image::model()->findAllByAttributes(array(
-			'album_id' => $album->id,
-		));
+		else {
+			$images = Image::model()->findAllByAttributes(array(
+				'album_id' => $album->id,
+			));
+		}
+
 		$this->render('galerija',array(
 			'albums' => $albums,
 			'images' => $images,
