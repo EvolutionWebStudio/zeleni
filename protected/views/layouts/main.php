@@ -36,7 +36,7 @@
                     <li>e-mail: greeny@vozd.net</li>
                     <li class="language-select">
                         <a href="<?php echo Yii::app()->request->baseUrl.'setlang/sr'; ?>" class="flag serbia" ></a>
-                        <a href="#" class="flag russia" ></a>
+                        <a href="<?php echo Yii::app()->request->baseUrl.'setlang/ru'; ?>" class="flag russia" ></a>
                         <a href="<?php echo Yii::app()->request->baseUrl.'setlang/en'; ?>" class="flag unitedkingdom" ></a>
                     </li>
                 </ul>
