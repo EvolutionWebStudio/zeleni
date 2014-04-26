@@ -214,7 +214,7 @@ class SiteController extends Controller
 						Yii::app()->user->setFlash('contact','Thank you for taking the time to contact us!');
 						break;
 					case 'ru':
-						Yii::app()->user->setFlash('contact','Hvala Vam što ste nas kontaktirali.');
+						Yii::app()->user->setFlash('contact','Благодарим Вас за то, что вы нашли время для связи с нами!');
 						break;
 				}
 				$this->refresh();

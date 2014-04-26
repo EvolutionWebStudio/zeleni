@@ -58,5 +58,16 @@ class ContactForm extends CFormModel
 				'phone' => 'Phone',
 				'webSite' => 'Web site'
 			);
+		if(Yii::app()->session['_lang'] == 'ru')
+			return array(
+				'name' => 'Имя',
+				'email' => 'E-mail',
+				'company' => 'Фирма',
+				'body' => 'Послание',
+				'phone' => 'Телефон',
+				'webSite' => 'Веб-сайт
+
+'
+			);
 	}
 }

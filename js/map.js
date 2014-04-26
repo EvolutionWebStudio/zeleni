@@ -7,7 +7,7 @@ $(document).ready( function(){
         center: new google.maps.LatLng(44.3250426,20.5923485),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
-    var myLatlng = new google.maps.LatLng(44.3250426,20.5923485);
+    var myLatlng = new google.maps.LatLng(44.322668,20.592040);
     var marker = new google.maps.Marker({
         draggable: true,
         position: myLatlng,

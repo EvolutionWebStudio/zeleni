@@ -107,7 +107,7 @@
 											echo CHtml::submitButton('Submit');
 											break;
 										case 'ru':
-											echo CHtml::submitButton('Pošalji');
+											echo CHtml::submitButton('Послать');
 											break;
 									}
 									?>

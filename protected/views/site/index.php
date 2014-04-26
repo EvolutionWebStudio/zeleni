@@ -70,7 +70,7 @@ $this->pageTitle=Yii::app()->name;
 			            echo 'Photo gallery';
 			            break;
 		            case 'ru':
-			            echo 'Pošalji';
+			            echo 'Галерея';
 			            break;
 	            }
 	            ?>
