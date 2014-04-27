@@ -43,8 +43,8 @@ class Category extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('order, parent_id', 'numerical', 'integerOnly'=>true),
-			array('title, alias', 'length', 'max'=>45),
-			array('content','length', 'max'=>255),
+			array('alias', 'length', 'max'=>45),
+			array('content,title','length', 'max'=>255),
 			array('lang, type, color', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
