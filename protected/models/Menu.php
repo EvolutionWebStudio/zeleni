@@ -137,7 +137,7 @@ class Menu extends CActiveRecord
 	public static function getMainMenu() {
 		$criteria=new CDbCriteria;
 		$criteria->condition = "type = 'Main' AND lang = '" . Menu::getLang() . "' AND parent_item IS NULL";
-		$criteria->order = "'order'";
+		$criteria->order = 't.order';
 		$menu = Menu::model()->findAll($criteria);
 		foreach ($menu as $row) {
 			$subCategories = Menu::getSubMenu($row->id,$row['category']->alias);
@@ -158,7 +158,7 @@ class Menu extends CActiveRecord
 	public static function getSubMenu($id,$link){
 		$criteria=new CDbCriteria;
 		$criteria->condition = "parent_item = $id AND lang = '" . Menu::getLang() . "'";
-		$criteria->order = "'order'";
+		$criteria->order = "t.order";
 		$subMenu = Menu::model()->findAll($criteria);
 		if($subMenu){
 			foreach ($subMenu as $row){
