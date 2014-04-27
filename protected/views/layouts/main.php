@@ -70,13 +70,38 @@
     <div class="bar violet">
         <footer class="main-footer">
             <div class="row collapse wide">
-                <span class="small-3 columns copyright">&copy; <?php echo date('Y'); ?> <strong>Greeny</strong> doo Aranđelovac</span>
-                <ul class="small-9 columns text-right">
-                    <li>Orašac bb, Aranđelovac, Srbija</li>
-                    <li>T:+381 34 6709-141</li>
-                    <li>F:+381 34 6709-230</li>
-                    <li>e-mail: greeny@vozd.net</li>
-                </ul>
+	            <?php
+	            switch ($this->lang) {
+		            case 'sr':
+			            echo "<span class='small-3 columns copyright'>&copy; <?php echo date('Y'); ?> <strong>Greeny</strong> doo Aranđelovac</span>
+				                <ul class='small-9 columns text-right'>
+				                    <li>Orašac bb, Aranđelovac, Srbija</li>
+				                    <li>T:+381 34 6709-141</li>
+				                    <li>F:+381 34 6709-230</li>
+				                    <li>e-mail: greeny@vozd.net</li>
+				                </ul>";
+			            break;
+		            case 'en':
+			            echo "<span class='small-3 columns copyright'>&copy; <?php echo date('Y'); ?> <strong>Greeny</strong> doo Aranđelovac</span>
+				                <ul class='small-9 columns text-right'>
+				                    <li>Orašac bb, 34308 Orašac, Serbia</li>
+				                    <li>T:+381 34 6709-141</li>
+				                    <li>F:+381 34 6709-230</li>
+				                    <li>e-mail: greeny@vozd.net</li>
+				                </ul>";
+			            break;
+		            case 'ru':
+			            echo "<span class='small-3 columns copyright'>&copy; <?php echo date('Y'); ?> <strong>Greeny</strong> doo Aranđelovac</span>
+				                <ul class='small-9 columns text-right'>
+				                    <li>Орашац б/н, 34308 Орашац, Сербия</li>
+				                    <li>T:+381 34 6709-141</li>
+				                    <li>F:+381 34 6709-230</li>
+				                    <li>e-mail: greeny@vozd.net</li>
+				                </ul>";
+			            break;
+	            }
+	            ?>
+
             </div>
         </footer>
     </div>
