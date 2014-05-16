@@ -75,7 +75,7 @@
 		            case 'sr':
 			            echo "<span class='small-3 columns copyright'>&copy; <?php echo date('Y'); ?> <strong>Greeny</strong> doo Aranđelovac</span>
 				                <ul class='small-9 columns text-right'>
-				                    <li>Orašac bb, Aranđelovac, Srbija</li>
+				                    <li>Orašac bb, 34308 Orašac, Srbija</li>
 				                    <li>T:+381 34 6709-141</li>
 				                    <li>F:+381 34 6709-230</li>
 				                    <li>e-mail: greeny@vozd.net</li>
