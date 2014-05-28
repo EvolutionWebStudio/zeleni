@@ -48,7 +48,7 @@
     <header class="main-header">
         <div class="row collapse wide relative">
             <h1 class="logo small-4 columns clearfix">
-                <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>">
+                <a href="<?php echo Yii::app()->request->getBaseUrl(true); ?>" class="<?php echo Yii::app()->session['_lang']; ?>">
                     <span>GREENY</span>proizvodnja i čuvanje voća
                 </a>
             </h1>

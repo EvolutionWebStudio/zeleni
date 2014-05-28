@@ -213,9 +213,17 @@ nav ul {
     width: 240px;
     height: 69px;
     margin-top: 20px;
-    background: url('../img/Greeny-Arandjelovac-logo.png') 0 0 no-repeat;
     text-indent: -9999px;
 }
+    .logo a.sr {
+        background: url('../img/Greeny-Arandjelovac-logo.png') 0 0 no-repeat;
+    }
+    .logo a.en {
+        background: url('../img/Greeny-Arandjelovac-logo_eng.jpg') 0 0 no-repeat;
+    }
+    .logo a.ru {
+        background: url('../img/Greeny-Arandjelovac-logo_ru.jpg') 0 0 no-repeat;
+    }
 
 /* MAIN MENU */
 
