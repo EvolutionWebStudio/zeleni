@@ -210,7 +210,6 @@ nav ul {
 }
 .logo a {
     display: block;
-    width: 240px;
     height: 69px;
     margin-top: 20px;
     text-indent: -9999px;
@@ -219,10 +218,10 @@ nav ul {
         background: url('../img/Greeny-Arandjelovac-logo.png') 0 0 no-repeat;
     }
     .logo a.en {
-        background: url('../img/Greeny-Arandjelovac-logo_eng.jpg') 0 0 no-repeat;
+        background: url('../img/Greeny-Arandjelovac-logo-eng.png') 0 0 no-repeat;
     }
     .logo a.ru {
-        background: url('../img/Greeny-Arandjelovac-logo_ru.jpg') 0 0 no-repeat;
+        background: url('../img/Greeny-Arandjelovac-logo-ru.png') 0 0 no-repeat;
     }
 
 /* MAIN MENU */
